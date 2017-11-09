@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS `food_db`;
+CREATE DATABASE `food_db`;
+

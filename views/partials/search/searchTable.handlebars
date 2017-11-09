@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-lg-12" id="searchTable">
+        <div class="table">
+            <table style="width:100%">
+                <thead id="table-header">
+                    <tr>
+                        <th> # </th>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Quantity (Lbs.)</th>
+                        <th>Expiration (Days)</th>
+                        <th>Reserve</th>
+                    </tr>
+                </thead>
+                <tbody id="table-content">
+                    <!-- handlebars.js to populate all items that reserved = 0 -->
+                    {{#each item}}
+                        {{#unless this.reserved}}
+                            <tr id="item-table-{{@index}}" class="table-content item-table-{{@index}}">
+                                <!-- Item ID -->
+                                <td>
+                                    <h4>{{this.id}}</h4>
+                                </td>
+                                <td>
+                                    <!-- Item Name -->
+                                    <h4>{{this.name}}</h4>
+                                </td>
+                                <td>
+                                    <!-- Item Category -->
+                                    <h4>{{this.category}}</h4>
+                                </td>
+                                <td>
+                                    <!-- Item Quantity -->
+                                    <h4>{{this.quantity}}</h4>
+                                </td>
+                                <td>
+                                    <!-- Item Expiration -->
+                                    <h4>{{this.expiration}}</h4>
+                                </td>
+                                <td>
+                                    <!--Reserve Button-->
+                                    <h4>
+                                        <form action="/api/{{this.id}}?_method=PUT" method="POST" class="button-size">
+                                            <input type="hidden" name="reserve" value="1">
+                                            <button type="submit" class="reserve btn btn-primary" data-id="{{this.id}}">Reserve!</button>
+                                        </form>
+                                    </h4>
+                                </td>
+                            </tr>
+                        {{/unless}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

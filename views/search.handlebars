@@ -1,0 +1,23 @@
+<header class="masthead">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading">Food for Cause</h1>
+            <hr>
+            <p>Help supply local food pantries, to make Kansas City a better place.</p>
+            {{> nav/menu}}
+        </div>
+        <div class="container" id="searchForm">
+            <div class="row col-lg-12">
+                <div class="mx-auto text-left">
+                    <h3 class="section-heading">Search For Availble Items!</h3>
+                    <form action="/newSearch" method="POST" role="form">
+                     <input type="text-center" id="item-search" class="form-control" name="userSearch">
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" style="float: right;" id="search-btn">
+                            <span class="glyphicon glyphicon-search"></span> Search</a>
+                     </form>
+                </div>
+                {{> search/searchTable}}
+            </div>
+        </div>
+    </div>
+</header>

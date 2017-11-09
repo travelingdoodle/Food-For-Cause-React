@@ -1,0 +1,55 @@
+<header class="masthead">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading">Food for Cause</h1>
+            <hr>
+            <p>Help supply local food pantries, to make Kansas City a better place.</p>
+            {{> nav/menu}}
+        </div>
+        <div class="container" id="searchForm">
+            <div class="row col-lg-12">
+                <div class="mx-auto text-left">
+                    <h3 class="section-heading">Add Item</h3>
+                    <form action="add/new" method="POST" role="form">
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Item Name..." name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Category</label>
+                            <select class="form-control" id="category" name="category">
+                                <option selected value="">All Categories</option>
+                                <option value="Proteins">Proteins</option>
+                                <option value="Grains">Grains</option>
+                                <option value="Vegetables">Vegetables</option>
+                                <option value="Fruits">Fruits</option>
+                                <option value="Dairy">Dairy</option>
+                                <option value="Oils">Oils</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Quantity (Pounds)</label>
+                            <input type="text" class="form-control" id="quantity" placeholder="Quantity in pounds..." name="quantity">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Expiration (Days)</label>
+                            <input type="text" class="form-control" id="expiration" placeholder="Days until expiration..." name="expiration">
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-md" style="float: right;" id="add-btn">Add</button>
+                </div>
+                {{!-- I HAVE NO IDEA WHY THIS IS IN HERE! --}}
+                <h4 class="section-heading text-white" id="statsTitle" hidden="true">Item Search Results</h4>
+                <div id="stats" hidden="true">
+                    <h4 id="title"></h4>
+                    <div>
+                        <h4>
+                            <strong>Item:</strong>
+                            <span id="item"></span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
