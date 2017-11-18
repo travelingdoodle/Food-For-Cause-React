@@ -1,0 +1,35 @@
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a; }
+
+.carousel {
+  margin-bottom: 4rem; }
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10; }
+
+.carousel-item {
+  height: 32rem;
+  background-color: #777; }
+
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem; }
+
+.donation h2 {
+  font-weight: 400; }
+
+.divider {
+  margin: 5rem 0; }
+
+
+@media (min-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4; } } 
