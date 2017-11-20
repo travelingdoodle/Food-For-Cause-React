@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Main.css";
+import "./Main.css";
 
 const Main = () => (
     <div className="site-wrapper">

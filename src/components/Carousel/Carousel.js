@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Carousel.css";
+import "./Carousel.css";
 
 const Carousel = () => (
   <div id="myCarousel" className="carousel slide" data-ride="carousel">

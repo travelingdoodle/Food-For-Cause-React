@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Items.css";
+import "./ItemsAvailable.css";
 
 const Items = () => (
 

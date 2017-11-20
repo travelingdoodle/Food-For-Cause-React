@@ -1,10 +1,10 @@
 import React from "react";
-import Main from "./components/Main";
+import Main from "../components/Main";
 
-const App = () => (
+const Home = () => (
   <div className="container">
     <Main />
   </div>
 );
 
-export default App;
+export default Home;

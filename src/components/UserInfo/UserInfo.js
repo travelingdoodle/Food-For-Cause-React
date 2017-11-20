@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Contact.css";
+import "./UserInfo.css";
 
 const Contact = () => (
     <main role="main">
