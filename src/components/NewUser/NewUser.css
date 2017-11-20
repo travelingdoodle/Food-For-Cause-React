@@ -1,7 +1,7 @@
 body {
   padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #333; }
+  padding-bottom: 40px; }
+  /* background-color: #333; } */
   
 .container {
   margin-top: 150px; }
@@ -10,7 +10,7 @@ body {
   color: white; }
 
 h5 {
-  color: white;
+  /* color: white; */
   font-size: 18px; }
 
 hr {

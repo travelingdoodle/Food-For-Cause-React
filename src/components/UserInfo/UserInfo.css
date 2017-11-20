@@ -1,8 +1,11 @@
 .rounded-circle {
     margin-bottom: 20px; }
+
+hr {
+    border-color:  rgba(0,0,0,.1); }
   
-.bio {
-    margin-top: 4rem; }
+/* .bio {
+    margin-top: 4rem; } */
 
 .bio .col-lg-4 {
     margin-bottom: 1.5rem;
