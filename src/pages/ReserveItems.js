@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
 import ItemsAvailable from "../components/ItemsAvailable";
 
-const Items = () => (
+const ReserveItems = () => (
   <div className="container">
     <Navbar />
     <Carousel />
@@ -11,4 +11,4 @@ const Items = () => (
   </div>
 );
 
-export default Items;
+export default ReserveItems;

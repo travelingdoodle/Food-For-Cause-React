@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
 import ItemsAdd from "../components/ItemsAdd";
 
-const Add = () => (
+const DonateFood = () => (
   <div className="container">
     <Navbar />
     <Carousel />
@@ -11,4 +11,4 @@ const Add = () => (
   </div>
 );
 
-export default Add;
+export default DonateFood;
