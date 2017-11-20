@@ -1,7 +1,8 @@
 import React from "react";
+import "./Footer.css";
 
 const Footer = () => (
-  <footer className="container">
+  <footer className="container footer">
     <div className="row">
       <div className="col-lg-8 offset-lg-2">
         <p className="float-right"><a href="#">Back to top</a></p>

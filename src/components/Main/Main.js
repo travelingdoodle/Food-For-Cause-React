@@ -19,7 +19,7 @@ const Main = () => (
           <br />
           <h3 className="lead">Help supply local food pantries, to make Kansas City a better place.</h3>
           <br /><br />
-            <a href="login.html" className="btn btn-lg btn-secondary">Login</a>
+            <a href="/login" className="btn btn-lg btn-secondary">Login</a>
         </main>
 
         <footer className="mastfoot">

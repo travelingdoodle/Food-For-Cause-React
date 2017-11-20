@@ -3,7 +3,7 @@ import "./NewUser.css";
 
 
 const Register = () => (
-  <div className="container"> 
+  <div className="container register"> 
     <form className="form-signin">
       <h2 className="form-signin-heading text-left">Register</h2>
         <hr />

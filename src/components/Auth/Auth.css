@@ -3,7 +3,8 @@ body {
   padding-bottom: 40px;
   background-color: #333; }
 
-.container {
+.login {
+  background-color: #333;
   margin-top: 200px; }
 
 .form-signin {
