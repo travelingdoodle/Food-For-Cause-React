@@ -4,8 +4,12 @@
 hr {
     border-color:  rgba(0,0,0,.1); }
   
-/* .bio {
-    margin-top: 4rem; } */
+.bio {
+    padding-top: 5rem; }
+
+.btn-outline-info {
+    margin-top: 15px;
+}
 
 .bio .col-lg-4 {
     margin-bottom: 1.5rem;
@@ -28,4 +32,4 @@ hr {
     height: auto; }
 
 .reserved {
-    margin-bottom: 50px; }
+    margin: 50px 0 50px 0; }

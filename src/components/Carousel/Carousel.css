@@ -5,11 +5,13 @@ body {
 
 .container {
   min-width: 100%;
-  padding: 0;
-  margin: 0; }
+  padding: 0; }
 
 .carousel {
   margin-bottom: 4rem; }
+
+.carousel-heading {
+  font-size: 2.5rem; }
 
 .carousel-caption {
   bottom: 3rem;

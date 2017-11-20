@@ -5,7 +5,7 @@ const Add = () => (
     <section className="container donation">
         <div className="row">
             <div className="col-lg-8 offset-lg-2">
-                <div className="col-lg-7 offset-lg-2">
+                <div className="col-lg-7 offset-lg-2 text-left">
                     <h2>Add Donation Here</h2>
                         <hr />
                     <div className="input-group">
@@ -15,9 +15,9 @@ const Add = () => (
                         </span>
                     </div>
                 </div>
+                <hr className="divider" />
             </div>
         </div>
-        <hr className="divider" />
     </section>
 );
 

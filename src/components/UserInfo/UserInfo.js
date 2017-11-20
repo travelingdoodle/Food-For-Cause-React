@@ -6,7 +6,7 @@ const Contact = () => (
       <div className="container bio">
         <div className="row">
           <div className="col-lg-4 offset-lg-4">
-            <img className="rounded-circle" src="default-profile.png" alt="Placeholder Image" height="150" />
+            <img className="rounded-circle" src="https://www.catholic.edu/assets/images/default_profile.jpg" alt="Placeholder Image" height="150" />
             <h2><span>Name/Organization</span></h2>
             <br />
           </div>
@@ -44,11 +44,10 @@ const Contact = () => (
                   </td>
                 </tr>
               </tbody>
+              <hr />
             </div>
           </div>
         </table>
-
-        <hr />
 
         <div className="container reserved">
           <div className="row">
@@ -129,12 +128,12 @@ const Contact = () => (
                         </tr>
                       </tbody>
                     </table>
+                    <hr className="divider" />
                   </div>
                 </div>
               </div>
             </div>
         </div>
-            <hr className="divider" />
      </main>
 );
 
