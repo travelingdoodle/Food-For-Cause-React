@@ -1,17 +1,32 @@
 {
-  "name": "finalproject",
-  "version": "0.1.0",
-  "private": true,
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "hbs FFC",
+  "main": "server.js",
   "dependencies": {
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "fs": "0.0.1-security",
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.4.2",
+    "path": "^0.12.7",
+    "sequelize": "^4.17.0"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/travelingdoodle/project2.git"
+  },
+  "author": "Reggie Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/travelingdoodle/project2/issues"
+  },
+  "homepage": "https://github.com/travelingdoodle/project2#readme"
 }
