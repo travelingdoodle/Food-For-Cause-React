@@ -5,11 +5,11 @@ import "./Navbar.css";
 
 const Navbar = () => (
   <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a className="navbar-header">
+    <div className="navbar-header">
         <Link className="navbar-brand" to="/">
           Food For Cause
         </Link>
-      </a>
+      </div>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
