@@ -6,7 +6,7 @@ const Register = () => (
   <div className="container register"> 
     <form className="form-signin">
       <h2 className="form-signin-heading text-left">Register</h2>
-        <hr />
+        <hr className="light" />
         <br />
       <label for="inputOganization" className="sr-only">Organization</label>
       <input type="Organization" id="inputOrganization" className="form-control" placeholder="Organization" required autofocus />
@@ -26,8 +26,8 @@ const Register = () => (
     
       <div className="row">
           <div className="col-lg-12 text-left">
-            <h5>Please Choose Your Role</h5>
-            <hr />
+            <h5 className="role">Please Choose Your Role</h5>
+            <hr className="light" />
           </div>
       </div>
 

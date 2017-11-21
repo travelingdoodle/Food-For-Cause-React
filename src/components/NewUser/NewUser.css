@@ -9,11 +9,11 @@ body {
 #create {
   color: white; }
 
-h5 {
-  /* color: white; */
+.role {
+  color: white;
   font-size: 18px; }
 
-hr {
+.light {
   border-color: white; }
 
 .form-check  {

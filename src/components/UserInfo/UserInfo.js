@@ -6,7 +6,7 @@ const Contact = () => (
       <div className="container bio">
         <div className="row">
           <div className="col-lg-4 offset-lg-4">
-            <img className="rounded-circle" src="https://www.catholic.edu/assets/images/default_profile.jpg" alt="Placeholder Image" height="150" />
+            <img className="rounded-circle" src="https://www.catholic.edu/assets/images/default_profile.jpg" alt="Placeholder" height="150" />
             <h2><span>Name/Organization</span></h2>
             <br />
           </div>
