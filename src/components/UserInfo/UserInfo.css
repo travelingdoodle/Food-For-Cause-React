@@ -1,0 +1,35 @@
+.rounded-circle {
+    margin-bottom: 20px; }
+
+hr {
+    border-color:  rgba(0,0,0,.1); }
+  
+.bio {
+    padding-top: 5rem; }
+
+.btn-outline-info {
+    margin-top: 15px;
+}
+
+.bio .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center; }
+
+.bio .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem; }
+
+.divider {
+    margin: 5rem 0; }
+
+.table td {
+    border-top: none !important; }
+
+.contact td {
+    padding-right: 20rem; }
+
+.table-responsive {
+    height: auto; }
+
+.reserved {
+    margin: 50px 0 50px 0; }
