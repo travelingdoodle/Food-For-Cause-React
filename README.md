@@ -22,7 +22,6 @@
 * Unreserved items that are nearing expiration will be tweeted and text (SMS) to let the community know about their availability.
 
 ### What powers FoodForCause?
-* React
 * Node/ Express
 * MySQL
 * Heroku
