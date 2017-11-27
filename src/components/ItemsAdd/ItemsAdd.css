@@ -1,5 +1,22 @@
-.donation h2 {
-    font-weight: 400; }
-  
-  .divider {
-    margin: 5rem 0; }
+.donator {
+  margin-bottom: 4rem; }
+
+.section-heading {
+  font-weight: 400; }
+
+label {
+  margin-left: 5px;
+  font-size: 18px; }
+
+#name {
+  width: 20rem; }
+
+#category {
+  width: 12rem; }
+
+.form-group {
+  margin-right: 5px;
+  display: inline-block; }
+
+.add {
+  margin: 0 0 4.5px 2px; }

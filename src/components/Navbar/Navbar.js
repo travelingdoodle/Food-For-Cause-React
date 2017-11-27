@@ -31,6 +31,9 @@ const Navbar = () => (
         >
           <Link to="/donate">Donate Food</Link>
         </li>
+        </ul>
+        <ul className="nav navbar-nav mr-right">
+        <img className="rounded-circle" id="nav-pic" src="https://www.catholic.edu/assets/images/default_profile.jpg" alt="Placeholder" height="25px" />
         <li className={window.location.pathname === "/profile" ? "active" : ""}>
           <Link to="/profile">Profile</Link>
         </li>
@@ -51,10 +54,10 @@ const Navbar = () => (
         </li>
       </ul> */}
 
-      <form className="form-inline mt-2 mt-md-0">
+      {/* <form className="form-inline mt-2 mt-md-0">
         <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      </form> */}
     </div>
   </nav>
 );

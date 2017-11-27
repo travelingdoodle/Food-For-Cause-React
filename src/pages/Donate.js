@@ -1,14 +1,16 @@
 import React from "react";
 import Navbar from "../components/navbar/Navbar";
-import UserInfo from "../components/userinfo/UserInfo";
+import Carousel from "../components/carousel/Carousel";
+import ItemsAdd from "../components/itemsadd/ItemsAdd";
 import Footer from "../components/footer/Footer";
 
-const Profile = () => (
+const Donate = () => (
   <div className="container">
     <Navbar />
-    <UserInfo />
+    <Carousel />
+    <ItemsAdd />
     <Footer />
   </div>
 );
 
-export default Profile;
+export default Donate;

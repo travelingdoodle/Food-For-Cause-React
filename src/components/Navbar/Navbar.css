@@ -8,5 +8,12 @@ a:hover {
     color: rgba(255,255,255,.8);
     text-decoration: none; }
 
-a:active {
-    color: rgba(255,255,255,.8); }
+.navbar-expand-md .navbar-nav>.active>a,
+.navbar-expand-md .navbar-nav>.active>a:focus,
+.navbar-expand-md .navbar-nav>.active>a:hover {
+    color: white; }
+
+#nav-pic {
+    margin: 0; }
+
+    

@@ -14,9 +14,18 @@ const Items = () => (
         
         <div className="container table">
           <div className="row">
+          <div className="col-lg-3 offset-lg-6">
+                <div className="input-group">
+                  <input type="text" className="form-control" placeholder="Search for..." />
+                  <span className="input-group-btn">
+                    <button className="btn btn-secondary" type="button">Search!</button>
+                    <br />
+                  </span>
+                </div>
+                </div>
             <div className="col-lg-8 offset-lg-2 text-left">
               <h2>Available Items</h2>
-                <div className="table-responsive">
+                <div className="table-responsive available">
                   <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
                     <table className="table table-striped">
                       <thead>
@@ -232,9 +241,22 @@ const Items = () => (
                         </tr>
                        </tbody>
                     </table>
+                    <nav aria-label="Page navigation example">
+                    <ul className="pagination justify-content-end">
+                      <li className="page-item disabled">
+                        <a className="page-link" href="#" tabindex="-1">Previous</a>
+                      </li>
+                      <li className="page-item"><a className="page-link" href="#">1</a></li>
+                      <li className="page-item"><a className="page-link" href="#">2</a></li>
+                      <li className="page-item"><a className="page-link" href="#">3</a></li>
+                      <li className="page-item">
+                        <a className="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
                   </div>
-                  <hr className="divider" />
                 </div>
+                <hr className="divider" />
             </div>
         </div>
     </div>
