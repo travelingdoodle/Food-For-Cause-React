@@ -1,0 +1,19 @@
+a {
+    color: rgba(255,255,255,.5);
+    text-decoration: none;
+    padding-right: .5rem;
+    padding-left: .5rem; }
+
+a:hover {
+    color: rgba(255,255,255,.8);
+    text-decoration: none; }
+
+.navbar-expand-md .navbar-nav>.active>a,
+.navbar-expand-md .navbar-nav>.active>a:focus,
+.navbar-expand-md .navbar-nav>.active>a:hover {
+    color: white; }
+
+#nav-pic {
+    margin: 0; }
+
+    
