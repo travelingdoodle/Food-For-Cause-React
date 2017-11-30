@@ -1,8 +1,8 @@
-import React from "react";
-import "./UserInfo.css";
+import React from 'react';
+import './UserInfo.css';
 
 const Contact = () => (
-    <main role="main">
+  <main role="main">
       <div className="container bio">
         <div className="row">
           <div className="col-lg-4 offset-lg-4">
@@ -15,23 +15,23 @@ const Contact = () => (
         <table className="table contact">
           <div className="row">
             <div className="col-lg-8 offset-lg-2 text-left">
-                <h3>Contact information</h3>
-                <hr />
+              <h3>Contact information</h3>
+              <hr />
               <tbody>
                 <tr>
                   <td>
-                  <h5>Phone Number</h5>
-                  </td> 
+                    <h5>Phone Number</h5>
+                  </td>
                   <td><span>(555) 555-5555</span>
-                      <p><a className="btn btn-outline-info" href="#" role="button">Edit</a></p>
-                  </td> 
+                    <p><a className="btn btn-outline-info" href="#" role="button">Edit</a></p>
+                  </td>
                 </tr>
                 <tr>
                   <td>
                     <h5>Email Address</h5>
                   </td>
                   <td><span>none@none.com</span>
-                      <p><a className="btn btn-outline-info" href="#" role="button">Edit</a></p>
+                    <p><a className="btn btn-outline-info" href="#" role="button">Edit</a></p>
                   </td>
                 </tr>
                 <tr>
@@ -39,7 +39,7 @@ const Contact = () => (
                     <h5>Address</h5>
                   </td>
                   <td><span>123 N Main St<br /></span>
-                      <span>Kansas City, MO 64111<br /></span>
+                    <span>Kansas City, MO 64111<br /></span>
                     <p><a className="btn btn-outline-info" href="#" role="button">Edit</a></p>
                   </td>
                 </tr>
@@ -53,7 +53,7 @@ const Contact = () => (
           <div className="row">
             <div className="col-lg-8 offset-lg-2 text-left">
               <h3>Reserved items</h3>
-                <div className="table-responsive">
+              <div className="table-responsive">
                   <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
                     <table className="table table-striped">
                       <thead>
@@ -63,7 +63,7 @@ const Contact = () => (
                           <th>Category</th>
                           <th>Quantity (Lbs)</th>
                           <th>Expiration (Days)</th>
-                          <th></th>
+                          <th />
                         </tr>
                       </thead>
                       <tbody>
@@ -87,16 +87,16 @@ const Contact = () => (
                     </table>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="container listed">
+      <div className="container listed">
           <div className="row">
             <div className="col-lg-8 offset-lg-2 text-left">
               <h3>Listed items</h3>
-                <div className="table-responsive">
+              <div className="table-responsive">
                   <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
                     <table className="table table-striped">
                       <thead>
@@ -106,7 +106,7 @@ const Contact = () => (
                           <th>Category</th>
                           <th>Quantity (Lbs)</th>
                           <th>Expiration (Days)</th>
-                          <th></th>
+                          <th />
                         </tr>
                       </thead>
                       <tbody>
@@ -131,10 +131,10 @@ const Contact = () => (
                     <hr className="divider" />
                   </div>
                 </div>
-              </div>
             </div>
+          </div>
         </div>
-     </main>
+    </main>
 );
 
 export default Contact;

@@ -1,9 +1,9 @@
-import React from "react";
-import "./Main.css";
+import React from 'react';
+import './Main.css';
 
 const Main = () => (
-    <div className="site-wrapper">
-    <div className="site-wrapper-inner">
+  <div className="site-wrapper">
+      <div className="site-wrapper-inner">
       <div className="cover-container">
         <header className="masthead clearfix">
           <div className="inner">
@@ -19,7 +19,7 @@ const Main = () => (
           <br />
           <h3 className="lead">Help supply local food pantries, to make Kansas City a better place.</h3>
           <br /><br />
-            <a href="/login" className="btn btn-lg btn-secondary">Login</a>
+          <a href="/login" className="btn btn-lg btn-secondary">Login</a>
         </main>
 
         <footer className="mastfoot">
@@ -29,7 +29,7 @@ const Main = () => (
         </footer>
       </div>
     </div>
-  </div>
+    </div>
 );
 
 export default Main;
