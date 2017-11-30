@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/Reserved.css";
+import React from 'react';
+import '../styles/Reserved.css';
 
 const Reserved = () => (
     <div className="container reserved">

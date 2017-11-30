@@ -1,43 +1,43 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 
 const Navbar = () => (
   <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div className="navbar-header">
-        <Link className="navbar-brand" to="/">
+      <Link className="navbar-brand" to="/">
           Food For Cause
         </Link>
-      </div>
+    </div>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
+      <span className="navbar-toggler-icon" />
     </button>
     <div className="collapse navbar-collapse" id="navbarCollapse">
 
-    <ul className="nav navbar-nav mr-auto">
-        <li
+      <ul className="nav navbar-nav mr-auto">
+      <li
           className={
-            window.location.pathname === "/" ||
-            window.location.pathname === "/reserve"
-              ? "active"
-              : ""
+            window.location.pathname === '/' ||
+            window.location.pathname === '/reserve'
+              ? 'active'
+              : ''
           }
         >
           <Link to="/reserve">Reserve Items</Link>
         </li>
-        <li
-          className={window.location.pathname === "/donate" ? "active" : ""}
+      <li
+          className={window.location.pathname === '/donate' ? 'active' : ''}
         >
           <Link to="/donate">Donate Food</Link>
         </li>
-        </ul>
-        <ul className="nav navbar-nav mr-right">
-        <img className="rounded-circle" id="nav-pic" src="https://www.catholic.edu/assets/images/default_profile.jpg" alt="Placeholder" height="25px" />
-        <li className={window.location.pathname === "/profile" ? "active" : ""}>
+    </ul>
+      <ul className="nav navbar-nav mr-right">
+          <img className="rounded-circle" id="nav-pic" src="https://www.catholic.edu/assets/images/default_profile.jpg" alt="Placeholder" height="25px" />
+          <li className={window.location.pathname === '/profile' ? 'active' : ''}>
           <Link to="/profile">Profile</Link>
         </li>
-      </ul>
+        </ul>
 
       {/* <ul className="navbar-nav mr-auto">
         <li className="nav-item">

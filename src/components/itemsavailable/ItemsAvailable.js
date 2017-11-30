@@ -1,31 +1,31 @@
-import React from "react";
-import "./ItemsAvailable.css";
+import React from 'react';
+import './ItemsAvailable.css';
 
 const Items = () => (
 
-<section className="container content">
-        <div className="row">
+  <section className="container content">
+  <div className="row">
           <div className="col-lg-8 offset-lg-2 text-center">
             <h2>Potential Heading</h2>
             <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
             <hr className="divider" />
           </div>
         </div>
-        
-        <div className="container table">
+
+  <div className="container table">
           <div className="row">
-          <div className="col-lg-3 offset-lg-6">
-                <div className="input-group">
+            <div className="col-lg-3 offset-lg-6">
+            <div className="input-group">
                   <input type="text" className="form-control" placeholder="Search for..." />
                   <span className="input-group-btn">
                     <button className="btn btn-secondary" type="button">Search!</button>
                     <br />
                   </span>
                 </div>
-                </div>
+          </div>
             <div className="col-lg-8 offset-lg-2 text-left">
               <h2>Available Items</h2>
-                <div className="table-responsive available">
+              <div className="table-responsive available">
                   <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
                     <table className="table table-striped">
                       <thead>
@@ -35,7 +35,7 @@ const Items = () => (
                           <th>Category</th>
                           <th>Quantity (Lbs)</th>
                           <th>Expiration (Days)</th>
-                          <th></th>
+                          <th />
                         </tr>
                       </thead>
                       <tbody>
@@ -239,12 +239,12 @@ const Items = () => (
                           <td>libero</td>
                           <td><button type="button" className="btn btn-success">Reserve</button></td>
                         </tr>
-                       </tbody>
+                      </tbody>
                     </table>
                     <nav aria-label="Page navigation example">
-                    <ul className="pagination justify-content-end">
+                      <ul className="pagination justify-content-end">
                       <li className="page-item disabled">
-                        <a className="page-link" href="#" tabindex="-1">Previous</a>
+                        <a className="page-link" href="#" tabIndex="-1">Previous</a>
                       </li>
                       <li className="page-item"><a className="page-link" href="#">1</a></li>
                       <li className="page-item"><a className="page-link" href="#">2</a></li>
@@ -253,13 +253,13 @@ const Items = () => (
                         <a className="page-link" href="#">Next</a>
                       </li>
                     </ul>
-                  </nav>
+                    </nav>
                   </div>
                 </div>
-                <hr className="divider" />
+              <hr className="divider" />
             </div>
+          </div>
         </div>
-    </div>
 </section>
 
 );
