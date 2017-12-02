@@ -37,6 +37,9 @@ const Navbar = () => (
         <li className={window.location.pathname === "/profile" ? "active" : ""}>
           <Link to="/profile">Profile</Link>
         </li>
+        <li className={window.location.pathname === "/profile" ? "active" : ""}>
+          <Link to="/logout">Logout</Link>
+        </li>
       </ul>
 
       {/* <ul className="navbar-nav mr-auto">

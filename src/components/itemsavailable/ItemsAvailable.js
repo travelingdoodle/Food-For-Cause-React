@@ -1,9 +1,49 @@
 import React from "react";
 import "./ItemsAvailable.css";
+import Modal from 'react-modal';
 
-const Items = () => (
-
-<section className="container content">
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    width                 : '45%'
+  }
+};
+ 
+export default class Main extends React.Component {
+  constructor() {
+    super();
+ 
+    this.state = {
+      modalIsOpen: false
+    };
+ 
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+ 
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+ 
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = '#f00';
+  }
+ 
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+ 
+  render() {
+    return (
+      <div>
+        <section className="container content">
         <div className="row">
           <div className="col-lg-8 offset-lg-2 text-center">
             <h2>Potential Heading</h2>
@@ -15,14 +55,15 @@ const Items = () => (
         <div className="container table">
           <div className="row">
           <div className="col-lg-3 offset-lg-6">
-                <div className="input-group">
-                  <input type="text" className="form-control" placeholder="Search for..." />
-                  <span className="input-group-btn">
-                    <button className="btn btn-secondary" type="button">Search!</button>
-                    <br />
-                  </span>
-                </div>
-                </div>
+              <div className="input-group">
+                <input type="text" className="form-control" placeholder="Search for..." />
+                <span className="input-group-btn">
+                  <button className="btn btn-secondary" type="button">Search!</button>
+                  <br />
+                </span>
+              </div>
+          </div>
+          
             <div className="col-lg-8 offset-lg-2 text-left">
               <h2>Available Items</h2>
                 <div className="table-responsive available">
@@ -45,7 +86,7 @@ const Items = () => (
                           <td>ipsum</td>
                           <td>dolor</td>
                           <td>sit</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button onClick={this.openModal} type="button" className="btn btn-success">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,002</td>
@@ -244,7 +285,7 @@ const Items = () => (
                     <nav aria-label="Page navigation example">
                     <ul className="pagination justify-content-end">
                       <li className="page-item disabled">
-                        <a className="page-link" href="#" tabindex="-1">Previous</a>
+                        <a className="page-link" href="#" tabIndex="-1">Previous</a>
                       </li>
                       <li className="page-item"><a className="page-link" href="#">1</a></li>
                       <li className="page-item"><a className="page-link" href="#">2</a></li>
@@ -261,7 +302,21 @@ const Items = () => (
         </div>
     </div>
 </section>
-
-);
-
-export default Items;
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <h2 className="modal-heading" ref={subtitle => this.subtitle = subtitle}>Item Reserved!</h2>
+          <button className="btn btn-secondary close-modal" onClick={this.closeModal}>close</button>
+          <form>
+            <p className="modal-inner">Please pickup your item before the expiration date. Any item that has not been picked up within 24 hours will be released.</p>
+            <button className="btn btn-danger">Cancel</button>
+          </form>
+        </Modal>
+      </div>
+    );
+  }
+}

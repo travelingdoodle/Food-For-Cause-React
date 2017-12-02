@@ -1,0 +1,13 @@
+html,
+body {
+  height: 100%; }
+
+body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #333;
+    color: #5a5a5a; }
+
+.container {
+    min-width: 100%; 
+    padding: 0; }
