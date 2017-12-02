@@ -16,6 +16,7 @@ const ItemSchema = new mongoose.Schema({
   expiration: {type: Number, default: 1},
   reserved: { type: Boolean, default: 0},
   donor: { type: mongoose.Schema.Types.ObjectID, ref: 'User' },
+  receptical: { type: mongoose.Schema.Types.ObjectID, ref: 'User' },
 }, { timstamps: true });
 
 

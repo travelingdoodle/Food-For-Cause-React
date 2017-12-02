@@ -1,15 +1,18 @@
-// User Organization Name
+// ---------- Dependencies ----------
+const mongoose = require('mongoose');
 
-// User Name
+const uniqueValidator = require('mongoose-unique-validator');
 
-// User Phone Number
+// --------- @DREW --- NEED A WAY TO CONNECT THE USER AUTH --- @DREW ---------
+const UserSchema = new mongoose.Schema({
+  name: String,
+  organization: String,
+  phoneNumber: String,
+  email: String,
+  address: { type: Number, default: 1 },
+  pickup: String,
+  // Default value of 0 means user is not a donor
+  donor: { type: Boolean, default: 0 },
+}, { timstamps: true });
 
-// User Email address
-
-// User Address
-
-// User Reserved Items
-
-// User Listed Items
-
-// Donor Pickup Times
+mongoose.model('User', UserSchema);
