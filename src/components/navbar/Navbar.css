@@ -8,6 +8,15 @@ a:hover {
     color: rgba(255,255,255,.8);
     text-decoration: none; }
 
+.navbar {
+    background: linear-gradient(#569AAB, #45808f); }
+    /* background: linear-gradient(#d95746, #c34e3f); } */
+    /* background-color: #569AAB !important; } */
+    /* background-color: rgb(69, 128, 143) !important; } */
+    
+.navbar-logo {
+    height: 2em; }
+
 .navbar-expand-md .navbar-nav>.active>a,
 .navbar-expand-md .navbar-nav>.active>a:focus,
 .navbar-expand-md .navbar-nav>.active>a:hover {
@@ -16,4 +25,11 @@ a:hover {
 #nav-pic {
     margin: 0; }
 
+    @media (max-width: 480px) {
+        /* Removing profile pic from nav on mobile  */
+        #nav-pic {
+          visibility: hidden; 
+        }
+        #profileLink {
+            margin-top: -22px; } }
     

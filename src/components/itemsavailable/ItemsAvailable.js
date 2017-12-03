@@ -45,17 +45,21 @@ export default class Main extends React.Component {
       <div>
         <section className="container content">
         <div className="row">
-          <div className="col-lg-8 offset-lg-2 text-center">
-            <h2>Potential Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <div className="col-lg-8 offset-lg-2 text-uppercase">
+            <h2 
+              style= {{
+                color: "maroon",
+                fontWeight: "600"
+              }}
+            >Notice:</h2>
+            <p style= {{fontWeight: "600"}}>As items are parishable, please review the expiration date and plan accordingly. Reserved items must be picked up within 24 hours, otherwise, they will be released. Thank you for your understanding.</p>
             <hr className="divider" />
           </div>
         </div>
         
         <div className="container table">
-          <div className="row">
           <div className="col-lg-3 offset-lg-6">
-              <div className="input-group">
+              <div className="input-group searchbar">
                 <input type="text" className="form-control" placeholder="Search for..." />
                 <span className="input-group-btn">
                   <button className="btn btn-secondary" type="button">Search!</button>
@@ -65,18 +69,18 @@ export default class Main extends React.Component {
           </div>
           
             <div className="col-lg-8 offset-lg-2 text-left">
-              <h2>Available Items</h2>
+              <h2 className="available-heading">Available Items</h2>
                 <div className="table-responsive available">
                   <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
                     <table className="table table-striped">
-                      <thead>
+                      <thead className="table-header">
                         <tr>
                           <th>#</th>
                           <th>Item</th>
                           <th>Category</th>
                           <th>Quantity (Lbs)</th>
                           <th>Expiration (Days)</th>
-                          <th></th>
+                          <th>Reserve</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -86,7 +90,7 @@ export default class Main extends React.Component {
                           <td>ipsum</td>
                           <td>dolor</td>
                           <td>sit</td>
-                          <td><button onClick={this.openModal} type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button onClick={this.openModal} type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,002</td>
@@ -94,7 +98,7 @@ export default class Main extends React.Component {
                           <td>consectetur</td>
                           <td>adipiscing</td>
                           <td>elit</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,003</td>
@@ -102,7 +106,7 @@ export default class Main extends React.Component {
                           <td>nec</td>
                           <td>odio</td>
                           <td>Praesent</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,003</td>
@@ -110,7 +114,7 @@ export default class Main extends React.Component {
                           <td>Sed</td>
                           <td>cursus</td>
                           <td>ante</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,004</td>
@@ -118,7 +122,7 @@ export default class Main extends React.Component {
                           <td>diam</td>
                           <td>Sed</td>
                           <td>nisi</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,005</td>
@@ -126,7 +130,7 @@ export default class Main extends React.Component {
                           <td>quis</td>
                           <td>sem</td>
                           <td>at</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,006</td>
@@ -134,7 +138,7 @@ export default class Main extends React.Component {
                           <td>elementum</td>
                           <td>imperdiet</td>
                           <td>Duis</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,007</td>
@@ -142,7 +146,7 @@ export default class Main extends React.Component {
                           <td>ipsum</td>
                           <td>Praesent</td>
                           <td>mauris</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,008</td>
@@ -150,7 +154,7 @@ export default class Main extends React.Component {
                           <td>nec</td>
                           <td>tellus</td>
                           <td>sed</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,009</td>
@@ -158,7 +162,7 @@ export default class Main extends React.Component {
                           <td>semper</td>
                           <td>porta</td>
                           <td>Mauris</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,010</td>
@@ -166,7 +170,7 @@ export default class Main extends React.Component {
                           <td>Vestibulum</td>
                           <td>lacinia</td>
                           <td>arcu</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,011</td>
@@ -174,7 +178,7 @@ export default class Main extends React.Component {
                           <td>nulla</td>
                           <td>Class</td>
                           <td>aptent</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,012</td>
@@ -182,7 +186,7 @@ export default class Main extends React.Component {
                           <td>sociosqu</td>
                           <td>ad</td>
                           <td>litora</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,013</td>
@@ -190,7 +194,7 @@ export default class Main extends React.Component {
                           <td>per</td>
                           <td>conubia</td>
                           <td>nostra</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,014</td>
@@ -198,7 +202,7 @@ export default class Main extends React.Component {
                           <td>inceptos</td>
                           <td>himenaeos</td>
                           <td>Curabitur</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,015</td>
@@ -206,7 +210,7 @@ export default class Main extends React.Component {
                           <td>ligula</td>
                           <td>in</td>
                           <td>libero</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,016</td>
@@ -214,7 +218,7 @@ export default class Main extends React.Component {
                           <td>ipsum</td>
                           <td>Praesent</td>
                           <td>mauris</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,017</td>
@@ -222,7 +226,7 @@ export default class Main extends React.Component {
                           <td>nec</td>
                           <td>tellus</td>
                           <td>sed</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,018</td>
@@ -230,7 +234,7 @@ export default class Main extends React.Component {
                           <td>semper</td>
                           <td>porta</td>
                           <td>Mauris</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,019</td>
@@ -238,7 +242,7 @@ export default class Main extends React.Component {
                           <td>Vestibulum</td>
                           <td>lacinia</td>
                           <td>arcu</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,020</td>
@@ -246,7 +250,7 @@ export default class Main extends React.Component {
                           <td>nulla</td>
                           <td>Class</td>
                           <td>aptent</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,021</td>
@@ -254,7 +258,7 @@ export default class Main extends React.Component {
                           <td>sociosqu</td>
                           <td>ad</td>
                           <td>litora</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,022</td>
@@ -262,7 +266,7 @@ export default class Main extends React.Component {
                           <td>per</td>
                           <td>conubia</td>
                           <td>nostra</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,023</td>
@@ -270,7 +274,7 @@ export default class Main extends React.Component {
                           <td>inceptos</td>
                           <td>himenaeos</td>
                           <td>Curabitur</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                         <tr>
                           <td>1,024</td>
@@ -278,7 +282,7 @@ export default class Main extends React.Component {
                           <td>ligula</td>
                           <td>in</td>
                           <td>libero</td>
-                          <td><button type="button" className="btn btn-success">Reserve</button></td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
                        </tbody>
                     </table>
@@ -300,7 +304,6 @@ export default class Main extends React.Component {
                 <hr className="divider" />
             </div>
         </div>
-    </div>
 </section>
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -310,7 +313,7 @@ export default class Main extends React.Component {
           contentLabel="Example Modal"
         >
           <h2 className="modal-heading" ref={subtitle => this.subtitle = subtitle}>Item Reserved!</h2>
-          <button className="btn btn-secondary close-modal" onClick={this.closeModal}>close</button>
+          <button className="btn btn-default close-modal" onClick={this.closeModal}>close</button>
           <form>
             <p className="modal-inner">Please pickup your item before the expiration date. Any item that has not been picked up within 24 hours will be released.</p>
             <button className="btn btn-danger">Cancel</button>

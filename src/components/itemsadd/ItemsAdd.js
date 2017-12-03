@@ -46,7 +46,7 @@ export default class Main extends React.Component {
         <section className="container donator">
         <div className="row">
             <div className="col-lg-8 mx-auto text-left">
-                <h3 className="section-heading">Donate Item(s)</h3>
+                <h3 className="section-heading">Donations</h3>
                 <hr />
                 <br />
                 <form action="" method="POST" role="form" />
@@ -67,11 +67,11 @@ export default class Main extends React.Component {
                         </select>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="">Quantity (Pounds)</label>
+                        <label htmlFor="">Quantity</label>
                         <input type="text" className="form-control" id="quantity" placeholder="Quantity in pounds..." />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="">Expiration (Days)</label>
+                        <label htmlFor="">Expiration</label>
                         <input type="text" className="form-control" id="expiration" data-provide="datepicker" placeholder="Days until expiration..." />
                     </div>
                     <button onClick={this.openModal} className="btn btn-secondary add" type="button">Add Items!</button>
@@ -86,7 +86,7 @@ export default class Main extends React.Component {
           contentLabel="Example Modal"
         >
           <h2 className="modal-heading" ref={subtitle => this.subtitle = subtitle}>Thanks!</h2>
-          <button className="btn btn-secondary close-modal" onClick={this.closeModal}>close</button>
+          <button className="btn btn-default close-modal" onClick={this.closeModal}>close</button>
           <form>
             <p className="modal-inner">Your donation has been added!</p>
           </form>

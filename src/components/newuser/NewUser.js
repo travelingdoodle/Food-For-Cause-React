@@ -34,10 +34,10 @@ const Register = () => (
       <div className="row">
         <div className="col-lg-6 offset-lg-3">
           <div className="btn-group" data-toggle="buttons">
-              <label className="btn btn-secondary first">
+              <label className="btn btn-info first">
                 <input type="radio" name="options" id="option1" autoComplete="off" checked /> Donator
               </label>
-              <label className="btn btn-secondary">
+              <label className="btn btn-info">
                 <input type="radio" name="options" id="option2" autoComplete="off" /> Recipient
               </label>
             </div>

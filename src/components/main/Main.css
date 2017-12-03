@@ -15,7 +15,9 @@ h3.lead {
   color: #333;
   text-shadow: none;
   background-color: #fff;
-  background: linear-gradient(white, darkgray); }
+  /* background: linear-gradient(white, darkgray); } */
+  /* background: linear-gradient(#FFD700, #DAA520) !important; } */
+  background: linear-gradient(#89b9c4, #66A4B3) !important; }
 
 .site-wrapper {
   display: table;
@@ -100,7 +102,7 @@ h3.lead {
     /* ========================================== */
 
     .modal-heading {
-      color: orangered !important;
+      color: #45808f !important;
       width: 50%;
       float: left; }
     

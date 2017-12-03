@@ -1,5 +1,9 @@
 import React from "react";
 import "./Carousel.css";
+import Community from "../../assets/img/community.png";
+import Skyline from "../../assets/img/kcSkyline.png";
+import FoodBank from "../../assets/img/foodBank.png";
+
 
 const Carousel = () => (
   <div className="container">
@@ -11,33 +15,33 @@ const Carousel = () => (
       </ol>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img className="first-slide" src="#" alt="First slide" />
+          <img className="first-slide" src={Skyline} alt="Kansas City Skyline" />
           <div className="container">
             <div className="carousel-caption text-left">
-              <h1 className="carousel-heading">Our Mission</h1>
-              <p>Help supply local food pantries, to make Kansas City a better place.</p>
+              <h1 className="carousel-heading">Welcome</h1>
+              <p className="carousel-subheading">Food For Cause is proudly based out of Kansas City, Missouri.</p>
               <br />
               <p><a className="btn btn-lg btn-primary" href="#" role="button">About Us</a></p>
             </div>
           </div>
         </div>
         <div className="carousel-item">
-          <img className="second-slide" src="#" alt="Second slide" />
+          <img className="second-slide" src={Community} alt="Community" />
           <div className="container">
             <div className="carousel-caption">
-              <h1 className="carousel-heading">TBD</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <h1 className="carousel-heading">Our Mission</h1>
+              <p className="carousel-subheading">Help supply local food pantries, to make Kansas City a better place.</p>
               <p><a className="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
             </div>
           </div>
         </div>
         <div className="carousel-item">
-          <img className="third-slide" src="#" alt="Third slide" />
+          <img className="third-slide" src={FoodBank} alt="FoodBank" />
           <div className="container">
             <div className="carousel-caption text-right">
-              <h1 className="carousel-heading">TBD</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a className="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <h1 className="carousel-heading">Help Our Community</h1>
+              <p className="carousel-subheading">Roughly 72 billion pounds of food in the United States is thrown away.</p>
+              <p><a className="btn btn-lg btn-primary" href="http://www.feedingamerica.org/our-work/our-approach/reduce-food-waste.html" target="_blank" role="button">Resource</a></p>
             </div>
           </div>
         </div>

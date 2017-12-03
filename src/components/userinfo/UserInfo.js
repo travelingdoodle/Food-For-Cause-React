@@ -184,7 +184,7 @@ export default class Main extends React.Component {
           contentLabel="Example Modal"
         >
           <h2 className="modal-heading" ref={subtitle => this.subtitle = subtitle}>Are You Sure?</h2>
-          <button className="btn btn-secondary close-modal" onClick={this.closeModal}>close</button>
+          <button className="btn btn-default close-modal" onClick={this.closeModal}>close</button>
           <form>
             <p className="modal-inner"></p>
             <button className="btn btn-danger">Confirm</button>
