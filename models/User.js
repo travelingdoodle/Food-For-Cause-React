@@ -18,7 +18,8 @@ const UserSchema = new mongoose.Schema({
   },
   organization: String,
   phoneNumber: String,
-  address: { type: Number, default: 1 },
+  image: String,
+  address: String,
   pickupTime: String,
   // Default value of 0 means user is not a recipient, aka a donor
   recipient: { type: Boolean, default: 0 },
@@ -53,56 +54,27 @@ UserSchema.methods.toAuthJSON = () => {
     username: this.username,
     email: this.email,
     token: this.generateJWT(),
-    bio: this.bio,
+    organization: this.organization,
+    phoneNumber: this.phoneNumber,
     image: this.image,
+    address: this.address,
+    pickupTime: this.pickupTime,
+    // Default value of 0 means user is not a recipient, aka a donor
+    recipient: this.recipient,
   };
 };
 
-UserSchema.methods.toProfileJSONFor = (user) => {
+UserSchema.methods.toProfileJSONFor = (User) => {
   return {
     username: this.username,
-    bio: this.bio,
-    image: this.image || 'https://static.productionready.io/images/smiley-cyrus.jpg',
-    following: user ? user.isFollowing(this._id) : false,
+    organization: this.organization,
+    phoneNumber: this.phoneNumber,
+    image: this.image || 'http://www.syfy.com/sites/syfy/files/2017/10/rick_and_morty_1.jpg',
+    address: this.address,
+    pickupTime: this.pickupTime,
+    // Default value of 0 means user is not a recipient, aka a donor
+    recipient: this.recipient,
   };
-};
-
-UserSchema.methods.favorite = (id) => {
-  if (this.favorites.indexOf(id) === -1) {
-    this.favorites.push(id);
-  }
-
-  return this.save();
-};
-
-UserSchema.methods.unfavorite = (id) => {
-  this.favorites.remove(id);
-  return this.save();
-};
-
-UserSchema.methods.isFavorite = (id) => {
-  return this.favorites.some((favoriteId) => {
-    return favoriteId.toString() === id.toString();
-  });
-};
-
-UserSchema.methods.follow = (id) => {
-  if (this.following.indexOf(id) === -1) {
-    this.following.push(id);
-  }
-
-  return this.save();
-};
-
-UserSchema.methods.unfollow = (id) => {
-  this.following.remove(id);
-  return this.save();
-};
-
-UserSchema.methods.isFollowing = (id) => {
-  return this.following.some((followId) => {
-    return followId.toString() === id.toString();
-  });
 };
 
 mongoose.model('User', UserSchema);
