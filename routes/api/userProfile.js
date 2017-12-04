@@ -1,7 +1,10 @@
 const router = require('express').Router();
+
 const mongoose = require('mongoose');
+
 const userProfile = mongoose.model('userProfile');
-const auth = require(../auth);
+
+const auth = require('../auth');
 
 // Preload user profile on routes with ':User'
 
@@ -20,3 +23,5 @@ const auth = require(../auth);
 // User Listed Items
 
 // Donor Pickup Times
+
+module.exports = router;
