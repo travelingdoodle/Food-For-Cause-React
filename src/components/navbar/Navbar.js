@@ -25,21 +25,21 @@ const Navbar = () => (
               : ""
           }
         >
-          <Link to="/reserve">Reserve Items</Link>
+          <Link className="nav-link" to="/reserve">Reserve Items</Link>
         </li>
         <li className={window.location.pathname === "/donate" ? "active" : ""}
         >
-          <Link to="/donate">Donate Food</Link>
+          <Link className="nav-link" to="/donate">Donate Food</Link>
         </li>
         </ul>
         <ul className="nav navbar-nav mr-right">
         <img className="rounded-circle" id="nav-pic" src="https://www.catholic.edu/assets/images/default_profile.jpg" alt="Placeholder" height="25px" />
         <li id="profileLink" className={window.location.pathname === "/profile" ? "active" : ""}>
-          <Link to="/profile">Profile</Link>
+          <Link className="nav-link" to="/profile">Profile</Link>
         </li>
         <li className={window.location.pathname === "/logout" ? "active" : ""}
         >
-          <Link to="/logout">Logout</Link>
+          <Link className="nav-link" to="/logout">Logout</Link>
         </li>
       </ul>
     </div>

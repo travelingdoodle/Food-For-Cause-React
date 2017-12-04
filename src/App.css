@@ -11,3 +11,22 @@ body {
 .container {
     min-width: 100%; 
     padding: 0; }
+
+
+/* Modal */
+/* ========================================== */
+
+.modal-heading {
+    text-transform: uppercase;
+    color: #45808f !important;
+    width: 75%;
+    float: left; }
+    
+.close-modal {
+    float: right; }
+
+.close-modal:hover {
+    color: #888; }
+
+.modal-inner {
+    margin-top: 4em; }

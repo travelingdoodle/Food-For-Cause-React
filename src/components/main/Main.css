@@ -68,6 +68,18 @@ h3.lead {
 .mastfoot {
   color: rgba(255,255,255,.5); }
 
+.about-heading {
+  text-transform: uppercase;
+  color: #45808f;
+  margin-top: 1.5em; }
+
+.about-inner {
+  padding: 0 3rem 0 3rem;
+  font-size: 18px;
+  font-weight: 500; }
+
+.about-inner p {
+  clear: both; }
 
 @media (min-width: 768px) {
   .nav-masthead {
@@ -96,18 +108,3 @@ h3.lead {
   .mastfoot,
   .cover-container {
     width: 75rem; } }
-    
-
-    /* Modal */
-    /* ========================================== */
-
-    .modal-heading {
-      color: #45808f !important;
-      width: 50%;
-      float: left; }
-    
-    .close-modal {
-      float: right; }
-
-    .modal-inner {
-      margin-top: 4em; }

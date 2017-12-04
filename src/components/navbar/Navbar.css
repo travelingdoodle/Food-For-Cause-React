@@ -8,6 +8,10 @@ a:hover {
     color: rgba(255,255,255,.8);
     text-decoration: none; }
 
+.nav-link {
+    text-transform: uppercase;
+    font-weight: 500; }
+
 .navbar {
     background: linear-gradient(#569AAB, #45808f); }
     /* background: linear-gradient(#d95746, #c34e3f); } */
@@ -23,7 +27,7 @@ a:hover {
     color: white; }
 
 #nav-pic {
-    margin: 0; }
+    margin: 8px 0; }
 
     @media (max-width: 480px) {
         /* Removing profile pic from nav on mobile  */

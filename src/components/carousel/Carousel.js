@@ -40,7 +40,7 @@ const Carousel = () => (
           <div className="container">
             <div className="carousel-caption text-right">
               <h1 className="carousel-heading">Help Our Community</h1>
-              <p className="carousel-subheading">Roughly 72 billion pounds of food in the United States is thrown away.</p>
+              <p className="carousel-subheading">Roughly 72 billion pounds of food in the United States is thrown away every year.</p>
               <p><a className="btn btn-lg btn-primary" href="http://www.feedingamerica.org/our-work/our-approach/reduce-food-waste.html" target="_blank" role="button">Resource</a></p>
             </div>
           </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Main.css";
 import Modal from 'react-modal';
+import Logo from '../../assets/img/logo2.png';
 
 
 const customStyles = {
@@ -48,7 +49,6 @@ export default class Main extends React.Component {
  
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
   }
  
   closeModal() {
@@ -96,10 +96,21 @@ export default class Main extends React.Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <h2 className="modal-heading" ref={subtitle => this.subtitle = subtitle}>About Food For Cause</h2>
-          <button className="btn btn-default close-modal" onClick={this.closeModal}>close</button>
-          <form>
-            <p className="modal-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta libero id ligula tempor porta. Integer mollis ac elit sit amet porttitor. Nulla auctor metus ipsum, sed lacinia libero rhoncus ut. Ut ipsum mauris, finibus vel rhoncus eget, egestas id massa. Integer tempor condimentum tellus quis elementum. Praesent semper, nisl id bibendum vehicula, elit ligula hendrerit est, quis sollicitudin justo lacus ac massa. Etiam viverra nisl quam, et rhoncus nibh consectetur eget. Etiam nec urna dignissim, dignissim mauris quis, congue ex. Nulla malesuada, elit ac finibus mollis, arcu sem suscipit justo, ac porta leo magna id enim. Proin accumsan mattis pulvinar. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam sit amet erat justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed a diam faucibus, mattis massa eu, placerat turpis</p>
+        <button className="btn btn-default close-modal" onClick={this.closeModal}>close</button>
+          <form className="about-inner">
+          <img style={{height:'5em'}} src={Logo} />
+            <h2 className="about-heading ">About Food For Cause</h2>
+              <hr style={{width:'36%', float:'left', clear:'both'}}/>
+            <p>Food For Cause provides a platform to connect local community outreach programs, like food banks and kitchens,
+              with companies that have food to donate. This is our final project at the University of Kansas Fullstack
+              coding bootcamp.</p>
+              <br />
+            <h4 style={{fontWeight: '600', textTransform: 'uppercase'}}>Why are Donations so Important?</h4>
+              <hr style={{width:'40%', float:'left',}}/>
+            <p>Donating wholesome food to community progams diverts food waste from landfills and puts food on
+              the table for families in need. Donations of non-perishable and unspoiled perishable food from businesses 
+              (farms | restaurants | groceries) help stock the shelves at local food banks, soup kitchens, pantries, and shelters. 
+              Donations from food establishments play an important role in feeding families in our community.</p>
           </form>
         </Modal>
       </div>
