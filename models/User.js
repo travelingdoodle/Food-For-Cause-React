@@ -17,7 +17,7 @@ const UserSchema = new mongoose.Schema({
   address: { type: Number, default: 1 },
   pickup: String,
   // Default value of 0 means user is not a donor
-  donor: { type: Boolean, default: 0 },
+  recipient: { type: Boolean, default: 0 },
 }, { timstamps: true });
 
 mongoose.model('User', UserSchema);
