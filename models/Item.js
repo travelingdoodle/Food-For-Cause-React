@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-const uniqueValidator = require('mongo-unique-validator');
+const uniqueValidator = require('mongoose-unique-validator');
 
 const slug = require('slug');
 
@@ -13,8 +13,8 @@ const ItemSchema = new mongoose.Schema({
   name: String,
   category: String,
   quantitiy: Number,
-  expiration: {type: Number, default: 1},
-  reserved: { type: Boolean, default: 0},
+  expiration: { type: Number, default: 1 },
+  reserved: { type: Boolean, default: 0 },
   donor: { type: mongoose.Schema.Types.ObjectID, ref: 'User' },
   receptical: { type: mongoose.Schema.Types.ObjectID, ref: 'User' },
 }, { timstamps: true });
@@ -24,7 +24,7 @@ ItemSchema.methods.slugify = () => {
   this.slug = slug(this.name) + '-' + (Math.random() * Math.pow(36, 6) | 0).toString(36);
 };
 
-ItemSchema.methods.toJSONfor = (User) => {
+ItemSchema.methods.toJSONfor = (Item) => {
   return {
     slug: this.slug,
     namecategory: this.name,

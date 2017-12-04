@@ -3,7 +3,12 @@ const mongoose = require('mongoose');
 
 const uniqueValidator = require('mongoose-unique-validator');
 
-// --------- @DREW --- NEED A WAY TO CONNECT THE USER AUTH --- @DREW ---------
+const crypto = require('crypto');
+
+const jwt = require('jsonwebtoken');
+
+const secret = require('../config').secret;
+
 const UserSchema = new mongoose.Schema({
   name: String,
   organization: String,
