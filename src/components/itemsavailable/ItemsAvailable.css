@@ -44,8 +44,12 @@
 .page-link {
   color: #333; }
 
+.btn-outline-warning {
+  color: #45808f !important; }
+
 .btn-outline-warning:hover,
 .btn-outline-warning:active {
+  color: white !important;
   /* background: linear-gradient(gold, goldenrod) !important; } */
   background: linear-gradient(#ffb732, #ffa500) !important; }
 

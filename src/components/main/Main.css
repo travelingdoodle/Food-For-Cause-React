@@ -71,6 +71,7 @@ h3.lead {
 .about-heading {
   text-transform: uppercase;
   color: #45808f;
+  text-shadow: 0 2px 2px rgba( 0,0,0, .3);  
   margin-top: 1.5em; }
 
 .about-inner {
