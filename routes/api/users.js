@@ -28,11 +28,23 @@ router.put('/user', auth.required, (req, res, next) => {
     if (typeof req.body.user.email !== 'undefined') {
       user.email = req.body.user.email;
     }
-    if (typeof req.body.user.bio !== 'undefined') {
-      user.bio = req.body.user.bio;
+    if (typeof req.body.user.organization !== 'undefined') {
+      user.organization = req.body.user.organization;
+    }
+    if (typeof req.body.user.phoneNumber !== 'undefined') {
+      user.phoneNumber = req.body.user.phoneNumber;
     }
     if (typeof req.body.user.image !== 'undefined') {
       user.image = req.body.user.image;
+    }
+    if (typeof req.body.user.address !== 'undefined') {
+      user.address = req.body.user.address;
+    }
+    if (typeof req.body.user.pickupTime !== 'undefined') {
+      user.pickupTime = req.body.user.pickupTime;
+    }
+    if (typeof req.body.user.recipient !== 'undefined') {
+      user.recipient = req.body.user.recipient;
     }
     if (typeof req.body.user.password !== 'undefined') {
       user.setPassword(req.body.user.password);
@@ -71,7 +83,7 @@ router.post('/users', (req, res, next) => {
   user.email = req.body.user.email;
   user.setPassword(req.body.user.password);
 
-  user.save().then( () => {
+  user.save().then(() => {
     return res.json({ user: user.toAuthJSON() });
   }).catch(next);
 });
