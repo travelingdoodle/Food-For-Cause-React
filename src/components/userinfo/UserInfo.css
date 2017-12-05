@@ -1,5 +1,5 @@
 .rounded-circle {
-    margin-bottom: 20px; }
+    margin: 60px 0 20px; }
 
 hr {
     border-color:  rgba(0,0,0,.1); }
@@ -8,8 +8,7 @@ hr {
     padding-top: 5rem; }
 
 .btn-outline-info {
-    margin-top: 15px;
-}
+    margin-top: 15px; }
 
 .bio .col-lg-4 {
     margin-bottom: 1.5rem;
