@@ -21,8 +21,8 @@ const App = () =>
           <Route exact path="/donate" component={Donate} />
           <Route exact path="/profile" component={Profile} />
           <Route component={Home} /> 
-        </Switch>       
-      </Wrapper>
+        </Switch>   
+      </Wrapper>    
     </div>
   </Router>;
 

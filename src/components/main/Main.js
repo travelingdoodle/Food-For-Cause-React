@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Main.css";
 import Modal from 'react-modal';
 import Logo from '../../assets/img/logo2.png';
+import Image from '../../assets/img/ffc.png';
 
 
 const customStyles = {
@@ -37,7 +38,10 @@ export default class Main extends React.Component {
     this.state = {
       modalIsOpen: false
     };
- 
+
+    // Setting background image
+    document.getElementsByTagName("BODY")[0].background = Image;
+
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -45,6 +49,10 @@ export default class Main extends React.Component {
  
   openModal() {
     this.setState({modalIsOpen: true});
+  }
+
+  componentWillUnmount() {
+    document.getElementsByTagName("BODY")[0].background = ""    
   }
  
   afterOpenModal() {

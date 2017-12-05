@@ -1,23 +1,32 @@
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .home {
   text-align: center; }
   /* text-shadow: 0 .05rem .1rem rgba(0,0,0,.5); } */
 
 h1 {
-  font-size: 5em; }
+  font-size: 5em; 
+  text-shadow: 4px 4px 4px rgba(0,0,0, .75);}
   /* text-shadow: 2px 5px rgba(0, 0, 0, .6); } */
 
 h3.lead {
-  font-size: 1.5em; }
+  font-size: 1.7em;
+  text-shadow: 4px 4px 4px rgba(0,0,0, .75); }
 
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
+.btn-secondary {
   color: #333;
   text-shadow: none;
   background-color: #fff;
   /* background: linear-gradient(white, darkgray); } */
   /* background: linear-gradient(#FFD700, #DAA520) !important; } */
   background: linear-gradient(#89b9c4, #66A4B3) !important; }
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: white; }
 
 .site-wrapper {
   display: table;
