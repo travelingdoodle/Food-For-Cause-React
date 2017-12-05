@@ -23,6 +23,8 @@ const UserSchema = new mongoose.Schema({
   pickupTime: String,
   // Default value of 0 means user is not a recipient, aka a donor
   recipient: { type: Boolean, default: 0 },
+  hash: String,
+  salt: String,
 }, { timstamps: true });
 
 UserSchema.plugin(uniqueValidator, { message: 'is already taken.' });
