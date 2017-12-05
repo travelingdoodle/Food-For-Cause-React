@@ -80,6 +80,7 @@ export default class Main extends React.Component {
             <div className="col-lg-8 offset-lg-2 text-left">
               <h2 className="available-heading">Available Items</h2>
                 <div className="table-responsive available">
+
                   <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
                     <table className="table table-striped">
                       <thead className="table-header">
@@ -293,10 +294,10 @@ export default class Main extends React.Component {
                           <td>libero</td>
                           <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
                         </tr>
-                       </tbody>
+                      </tbody>
                     </table>
                     <nav aria-label="Page navigation example">
-                    <ul className="pagination justify-content-end">
+                      <ul className="pagination justify-content-end">
                       <li className="page-item disabled">
                         <a className="page-link" href="#" tabIndex="-1">Previous</a>
                       </li>
@@ -307,11 +308,12 @@ export default class Main extends React.Component {
                         <a className="page-link" href="#">Next</a>
                       </li>
                     </ul>
-                  </nav>
+                    </nav>
                   </div>
                 </div>
-                <hr className="divider" />
+              <hr className="divider" />
             </div>
+          </div>
         </div>
 </section>
         <Modal

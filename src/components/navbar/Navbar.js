@@ -3,26 +3,25 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Logo from "../../assets/img/logo.png";
 
-
 const Navbar = () => (
   <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div className="navbar-header">
         <Link className="navbar-brand" to="/">
           <img className="navbar-logo" src={Logo} />
         </Link>
-      </div>
+    </div>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
+      <span className="navbar-toggler-icon" />
     </button>
     <div className="collapse navbar-collapse" id="navbarCollapse">
 
-    <ul className="nav navbar-nav mr-auto">
-        <li
+      <ul className="nav navbar-nav mr-auto">
+      <li
           className={
-            window.location.pathname === "/" ||
-            window.location.pathname === "/reserve"
-              ? "active"
-              : ""
+            window.location.pathname === '/' ||
+            window.location.pathname === '/reserve'
+              ? 'active'
+              : ''
           }
         >
           <Link className="nav-link" to="/reserve">Reserve Items</Link>

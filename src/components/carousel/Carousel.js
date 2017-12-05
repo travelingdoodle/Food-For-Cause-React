@@ -1,9 +1,11 @@
+
 import React from "react";
 import "./Carousel.css";
 import Community from "../../assets/img/community.png";
 import Skyline from "../../assets/img/kcSkyline.png";
 import FoodBank from "../../assets/img/foodBank.png";
 import Logo from '../../assets/img/logo2.png';
+
 
 
 import Modal from 'react-modal';

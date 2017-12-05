@@ -1,5 +1,5 @@
-import React from "react";
-import Main from "../components/main/Main";
+import React from 'react';
+import Main from '../components/main/Main';
 
 const Home = () => (
   <div className="container">

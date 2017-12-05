@@ -1,9 +1,9 @@
-import React from "react";
-import "./NewUser.css";
+import React from 'react';
+import './NewUser.css';
 
 
 const Register = () => (
-  <div className="container register"> 
+  <div className="container register">
     <form className="form-signin">
       <h2 className="form-signin-heading text-left">Register</h2>
         <hr className="light" />
@@ -22,10 +22,10 @@ const Register = () => (
         <br />
       <label htmlFor="inputPassword" className="sr-only">Create Password</label>
       <input type="password" id="inputPassword" className="form-control" placeholder="Create Password" required />
-        <br />
-    
+      <br />
+
       <div className="row">
-          <div className="col-lg-12 text-left">
+        <div className="col-lg-12 text-left">
             <h5 className="role">Please Choose Your Role</h5>
             <hr className="light" />
           </div>
@@ -40,14 +40,14 @@ const Register = () => (
               <label className="btn btn-info">
                 <input type="radio" name="options" id="option2" autoComplete="off" /> Recipient
               </label>
-            </div>
+          </div>
         </div>
       </div>
-        <br />
+      <br />
       <div className="row">
-          <div className="col-lg-10 offset-lg-1">
+        <div className="col-lg-10 offset-lg-1">
             <button className="btn btn-lg btn-secondary btn-block" type="submit">Create New Account</button>
-         </div>
+          </div>
       </div>
     </form>
   </div>
