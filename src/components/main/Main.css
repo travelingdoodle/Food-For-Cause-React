@@ -1,7 +1,7 @@
 body {
   background-size: cover;
   background-repeat: no-repeat;
-}
+  background-position: center; }
 
 .home {
   text-align: center; }
@@ -12,8 +12,9 @@ h1 {
   text-shadow: 4px 4px 4px rgba(0,0,0, .75);}
   /* text-shadow: 2px 5px rgba(0, 0, 0, .6); } */
 
-h3.lead {
+.cover-subheading {
   font-size: 1.7em;
+  font-weight: 300;
   text-shadow: 4px 4px 4px rgba(0,0,0, .75); }
 
 .btn-secondary {
@@ -111,7 +112,11 @@ h3.lead {
 
 @media (max-width: 480px) {
   .cover-container {
-    top: 0; } }
+    top: 0; }
+  .cover-heading {
+    font-size: 4em; }
+  .cover-subheading {
+    font-size: 1.4em;} }
 
 @media (min-width: 992px) {
   .masthead,

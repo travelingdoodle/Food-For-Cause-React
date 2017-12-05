@@ -67,7 +67,7 @@ export default class Main extends React.Component {
         </div>
         
         <div className="container table">
-          <div className="col-lg-3 offset-lg-6">
+          <div className="col-lg-3 col-md-6 offset-lg-6 offset-md-6">
               <div className="input-group searchbar">
                 <input type="text" className="form-control" placeholder="Search for..." />
                 <span className="input-group-btn">
@@ -314,8 +314,7 @@ export default class Main extends React.Component {
               <hr className="divider" />
             </div>
           </div>
-        </div>
-</section>
+        </section>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

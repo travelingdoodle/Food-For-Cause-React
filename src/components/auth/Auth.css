@@ -1,6 +1,6 @@
 .login {
   background-color: #333;
-  margin-top: 200px; }
+  margin-top: 12%; }
 
 .form-signin {
   max-width: 330px;
@@ -40,4 +40,8 @@
 
 .checkbox {
   float: left; }
+
+  @media (max-width: 480px) {
+    .login {
+      margin-top: 25%; } }
     

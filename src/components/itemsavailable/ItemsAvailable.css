@@ -54,11 +54,19 @@
   background: linear-gradient(#ffb732, #ffa500) !important; }
 
 
-@media (min-width: 640px) {
-  .content-heading {
-    font-size: 50px; } }
+  @media (min-width: 640px) {
+    .content {
+      padding: 20px !important; }
+    .searchbar {
+      margin-bottom: 50px; } }
 
-@media (min-width: 992px) {
-  .content-heading {
-    margin-top: 7rem; } } 
+  @media (max-width: 480px) {
+    .content {
+      padding: 15px !important; }
+    .searchbar {
+      margin-bottom: 50px; } }
+
+  @media (min-width: 992px) {
+    .content-heading {
+      margin-top: 7rem; } } 
       

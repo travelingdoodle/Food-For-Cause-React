@@ -83,7 +83,7 @@ export default class Main extends React.Component {
               <main role="main" className="inner cover">
                 <h1 className="cover-heading">Food For Cause</h1>
                 <br />
-                <h3 className="lead">Help supply local food pantries, to make Kansas City a better place.</h3>
+                <h3 className="cover-subheading">Help supply local food pantries, to make Kansas City a better place.</h3>
                 <br /><br />
                 <Link to="/login" className="btn btn-lg btn-secondary">Login</Link>
               </main>
