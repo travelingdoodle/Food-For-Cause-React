@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/Listed.css";
+import React from 'react';
+import '../styles/Listed.css';
 
 const Listed = () => (
     <div className="container listed">

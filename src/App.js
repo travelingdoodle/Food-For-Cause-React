@@ -1,3 +1,4 @@
+
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
@@ -10,7 +11,7 @@ import Wrapper from "./components/wrapper/Wrapper";
 import "./App.css";
 
 const App = () =>
-  <Router>
+  (<Router>
     <div>
       <Wrapper>
         <Switch>
@@ -24,6 +25,6 @@ const App = () =>
         </Switch>   
       </Wrapper>    
     </div>
-  </Router>;
+  </Router>);
 
 export default App;
