@@ -22,7 +22,7 @@ router.param('item', (req, res, next) => {
     }).catch(next);
 });
 
-router.get('/', auth.optional, (req, res, next) => {
+router.get('/', auth.required, (req, res, next) => {
   // ref = 32
 
 });
