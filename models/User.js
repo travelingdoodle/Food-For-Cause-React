@@ -66,17 +66,15 @@ UserSchema.methods.toAuthJSON = () => {
   };
 };
 
-UserSchema.methods.toProfileJSONFor = (User) => {
-  return {
-    username: this.username,
-    organization: this.organization,
-    phoneNumber: this.phoneNumber,
-    image: this.image || 'http://www.syfy.com/sites/syfy/files/2017/10/rick_and_morty_1.jpg',
-    address: this.address,
-    pickupTime: this.pickupTime,
-    // Default value of 0 means user is not a recipient, aka a donor
-    recipient: this.recipient,
-  };
-};
+UserSchema.methods.toProfileJSONFor = User => ({
+  username: this.username,
+  organization: this.organization,
+  phoneNumber: this.phoneNumber,
+  image: this.image || 'http://www.syfy.com/sites/syfy/files/2017/10/rick_and_morty_1.jpg',
+  address: this.address,
+  pickupTime: this.pickupTime,
+  // Default value of 0 means user is not a recipient, aka a donor
+  recipient: this.recipient,
+});
 
 mongoose.model('User', UserSchema);

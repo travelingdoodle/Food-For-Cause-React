@@ -22,10 +22,19 @@ router.param('item', (req, res, next) => {
     }).catch(next);
 });
 
-// router.get('/', auth.required, (req, res, next) => {
-//   // ref = 32
+router.get('/item', auth.required, (req, res, next) => {
+  Item.find({}).then((item) => {
+    if (!item) { return res.sendStatus(401); }
 
-// });
+    return res.json({ item: item.toAuthJSON() });
+  }).catch(next);
+});
+
+router.get('/items', (req, res) => {
+  Item.find({}, (err, items) => {
+    res.json(items);
+  });
+});
 
 // dont know that we need this. 
 router.put('/:items', auth.required, (req, res, next) => {
@@ -43,7 +52,7 @@ router.put('/:items', auth.required, (req, res, next) => {
   });
 });
 
-router.post('/donate', (req, res, next) => {
+router.post('/items', (req, res, next) => {
   const itemTest = new Item();
 
   itemTest.name = 'fish';
@@ -54,15 +63,9 @@ router.post('/donate', (req, res, next) => {
   itemTest.donor = '5a27655d2a983c2cd341196b';
 
   itemTest.save().then(() => {
-    return res.json({ item: itemTest.toAuthJSON() });
+    return res.json({ item: itemTest.toJSONfor() });
     res.send('test items inserted');
   }).catch(next);
-});
-
-router.get('/donate', (req, res) => {
-  Item.find({}, (err, items) => {
-    res.json(items);
-  });
 });
 
 module.exports = router;
