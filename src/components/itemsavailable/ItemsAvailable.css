@@ -17,11 +17,26 @@
 .divider {
   margin: 1rem 0 4rem; }
 
+.searchbar {
+  float: right; }
+
+.available-heading {
+  float: left;
+  text-transform: uppercase;
+  margin-bottom: 30px; }
+
 .available {
   height: 800px !important; }
 
+.table-header {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .75);
+  background-color: #F4A460;
+  background: linear-gradient(#F4A460, #db9356) !important; }
+
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: aliceblue; } 
+  /* background-color: aliceblue; }  */
+  background-color: #fff7f0; }
 
 .pagination {
   margin-right: 20px; }
@@ -29,11 +44,21 @@
 .page-link {
   color: #333; }
 
+.btn-outline-warning {
+  color: #45808f !important; }
 
-@media (min-width: 40em) {
+.btn-outline-warning:hover,
+.btn-outline-warning:active {
+  color: white !important;
+  /* background: linear-gradient(gold, goldenrod) !important; } */
+  background: linear-gradient(#ffb732, #ffa500) !important; }
+
+
+@media (min-width: 640px) {
   .content-heading {
     font-size: 50px; } }
 
-@media (min-width: 62em) {
+@media (min-width: 992px) {
   .content-heading {
     margin-top: 7rem; } } 
+      
