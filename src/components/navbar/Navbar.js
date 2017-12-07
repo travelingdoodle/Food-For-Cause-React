@@ -7,7 +7,7 @@ const Navbar = () => (
   <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div className="navbar-header">
         <Link className="navbar-brand" to="/">
-          <img className="navbar-logo" src={Logo} />
+          <img className="navbar-logo" src={Logo} alt="Food For Cause" />
         </Link>
     </div>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

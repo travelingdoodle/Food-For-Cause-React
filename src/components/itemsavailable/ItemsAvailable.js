@@ -2,6 +2,17 @@ import React from "react";
 import "./ItemsAvailable.css";
 import Modal from 'react-modal';
 
+// Import React Table
+import ReactTable from "react-table";
+import "react-table/react-table.css";
+
+import { ReactTableDefaults } from 'react-table'
+
+Object.assign(ReactTableDefaults, {
+  minRows: 15,
+  pageSizeOptions: [15, 20, 25, 50, 100],
+})
+
 const customStyles = {
   overlay : {
     position          : 'fixed',
@@ -28,7 +39,7 @@ export default class Main extends React.Component {
     super();
  
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
     };
  
     this.openModal = this.openModal.bind(this);
@@ -48,8 +59,13 @@ export default class Main extends React.Component {
   closeModal() {
     this.setState({modalIsOpen: false});
   }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
+ }
  
   render() {
+    const { data } = this.state;
     return (
       <div>
         <section className="container content">
@@ -65,8 +81,55 @@ export default class Main extends React.Component {
             <hr className="divider" />
           </div>
         </div>
-        
-        <div className="container table">
+
+        <div className="col-lg-10 offset-lg-1 text-center">
+          <ReactTable
+          data={[{
+            itemID: "hello", 
+            item: "hello",
+            category: "hello",
+            quantity: "hello",
+            expiration: "hello",
+            reserve: "hello"
+          }]}
+          columns={[
+                {
+                  Header: "#",
+                  accessor: "itemID",
+                  width: 100
+                },
+                {
+                  Header: "Item",
+                  accessor: "item",
+                },
+                {
+                  Header: "Category",
+                  id: "category",
+                  accessor: d => d.category
+                },
+                {
+                  Header: "Quantity (lbs)",
+                  accessor: "quantity"
+                },
+                {
+                  Header: "Expiration",
+                  accessor: "expiration"
+                },
+                {
+                  Header: "Reserve",
+                  Cell: row => (<button className="btn btn-outline-warning">Reserve</button>)
+                }
+              ]
+            }
+          defaultPageSize={10}
+          className="-striped -highlight"
+        />
+      </div>
+      <div className="col-lg-8 offset-lg-2">
+        <hr className="divider" />
+      </div>
+
+        {/* <div className="container table">
           <div className="col-lg-3 col-md-6 offset-lg-6 offset-md-6">
               <div className="input-group searchbar">
                 <input type="text" className="form-control" placeholder="Search for..." />
@@ -76,11 +139,10 @@ export default class Main extends React.Component {
                 </span>
               </div>
           </div>
-          
+
             <div className="col-lg-8 offset-lg-2 text-left">
               <h2 className="available-heading">Available Items</h2>
                 <div className="table-responsive available">
-
                   <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
                     <table className="table table-striped">
                       <thead className="table-header">
@@ -313,7 +375,7 @@ export default class Main extends React.Component {
                 </div>
               <hr className="divider" />
             </div>
-          </div>
+          </div> */}
         </section>
         <Modal
           isOpen={this.state.modalIsOpen}

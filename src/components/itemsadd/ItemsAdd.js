@@ -62,6 +62,10 @@ export default class Main extends React.Component {
   closeModal() {
     this.setState({modalIsOpen: false});
   }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
+ }
  
   render() {
     return (
@@ -72,7 +76,7 @@ export default class Main extends React.Component {
                 <h3 className="section-heading">Donations</h3>
                 <hr />
                 <br />
-                <form action="" method="POST" role="form">
+                <form action="" method="POST">
                     <div className="form-group">
                         <label htmlFor="">Item</label>
                         <input type="text" className="form-control" id="name" placeholder="Item Name..." required autoFocus />

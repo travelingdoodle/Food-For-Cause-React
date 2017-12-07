@@ -55,7 +55,7 @@ export default class Carousel extends React.Component {
 
  afterOpenModal() {
    // references are now sync'd and can be accessed.
-  //  this.subtitle.style.color = '#f00';
+   this.subtitle.style.color = '#f00';
  }
 
  closeModal() {
@@ -90,7 +90,7 @@ export default class Carousel extends React.Component {
                 <div className="carousel-caption">
                   <h1 className="carousel-heading">Our Mission</h1>
                   <p className="carousel-subheading">Help supply local food pantries, to make Kansas City a better place.</p>
-                  <p><a className="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                  <p><a className="btn btn-lg btn-primary" role="button">Learn more</a></p>
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default class Carousel extends React.Component {
                 <div className="carousel-caption text-right">
                   <h1 className="carousel-heading">Help Our Community</h1>
                   <p className="carousel-subheading">Roughly 72 billion pounds of food in the United States is thrown away every year.</p>
-                  <p><a className="btn btn-lg btn-primary" href="http://www.feedingamerica.org/our-work/our-approach/reduce-food-waste.html" target="_blank" role="button">Resource</a></p>
+                  <p><a className="btn btn-lg btn-primary" href="http://www.feedingamerica.org/our-work/our-approach/reduce-food-waste.html" rel="noopener noreferrer" target="_blank" role="button">Resource</a></p>
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default class Carousel extends React.Component {
         >
         <button className="btn btn-default close-modal" onClick={this.closeModal}>close</button>
           <form className="about-inner">
-          <img style={{height:'5em'}} src={Logo} />
+          <img style={{height:'5em'}} src={Logo} alt="FFC" />
             <h2 className="about-heading ">About Food For Cause</h2>
               <hr style={{width:'36%', float:'left', clear:'both'}}/>
             <p>Food For Cause provides a platform to connect local community outreach programs, like food banks and kitchens,

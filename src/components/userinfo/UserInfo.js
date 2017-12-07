@@ -48,6 +48,10 @@ export default class Main extends React.Component {
   closeModal() {
     this.setState({modalIsOpen: false});
   }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
+ }
  
   render() {
     return (
@@ -62,18 +66,18 @@ export default class Main extends React.Component {
             </div>
           </div>
 
-          <table className="table contact">
-            <div className="row">
-              <div className="col-lg-8 col-md-10 offset-lg-2 text-left">
-                <h3>Contact information</h3>
-                <hr />
+          <div className="row">
+            <div className="col-lg-8 col-md-10 offset-lg-2 text-left">
+              <h3>Contact information</h3>
+              <hr />
+              <table className="table contact">
                 <tbody>
                   <tr>
                     <td>
                       <h5>Phone Number</h5>
                     </td>
                     <td><span>(555) 555-5555</span>
-                      <p><a className="btn btn-outline-info" href="#" role="button">Edit</a></p>
+                      <p><a className="btn btn-outline-info" role="button">Edit</a></p>
                     </td>
                   </tr>
                   <tr>
@@ -81,7 +85,7 @@ export default class Main extends React.Component {
                       <h5>Email Address</h5>
                     </td>
                     <td><span>none@none.com</span>
-                      <p><a className="btn btn-outline-info" href="#" role="button">Edit</a></p>
+                      <p><a className="btn btn-outline-info" role="button">Edit</a></p>
                     </td>
                   </tr>
                   <tr>
@@ -90,14 +94,14 @@ export default class Main extends React.Component {
                     </td>
                     <td><span>123 N Main St<br /></span>
                       <span>Kansas City, MO 64111<br /></span>
-                      <p><a className="btn btn-outline-info" href="#" role="button">Edit</a></p>
+                      <p><a className="btn btn-outline-info" role="button">Edit</a></p>
                     </td>
                   </tr>
                 </tbody>
+              </table>
                 <hr />
-              </div>
             </div>
-          </table>
+          </div>
 
           <div className="container reserved">
             <div className="row">
