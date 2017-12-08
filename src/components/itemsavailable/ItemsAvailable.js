@@ -2,6 +2,17 @@ import React from 'react';
 import './ItemsAvailable.css';
 import Modal from 'react-modal';
 
+// Import React Table
+import ReactTable from "react-table";
+import "react-table/react-table.css";
+
+import { ReactTableDefaults } from 'react-table'
+
+Object.assign(ReactTableDefaults, {
+  minRows: 15,
+  pageSizeOptions: [15, 20, 25, 50, 100],
+})
+
 const customStyles = {
   overlay: {
     position: 'fixed',
@@ -49,7 +60,12 @@ export default class Main extends React.Component {
     this.setState({ modalIsOpen: false });
   }
 
+  componentWillMount() {
+    Modal.setAppElement('body');
+ }
+ 
   render() {
+    const { data } = this.state;
     return (
       <div>
         <section className="container content">
@@ -60,9 +76,57 @@ export default class Main extends React.Component {
               <hr className="divider" />
             </div>
           </div>
+        </div>
 
-          <div className="container table">
-            <div className="col-lg-3 offset-lg-6">
+        <div className="col-lg-10 offset-lg-1 text-center">
+          <ReactTable
+          data={[{
+            itemID: "hello", 
+            item: "hello",
+            category: "hello",
+            quantity: "hello",
+            expiration: "hello",
+            reserve: "hello"
+          }]}
+          columns={[
+                {
+                  Header: "#",
+                  accessor: "itemID",
+                  width: 100
+                },
+                {
+                  Header: "Item",
+                  accessor: "item",
+                },
+                {
+                  Header: "Category",
+                  id: "category",
+                  accessor: d => d.category
+                },
+                {
+                  Header: "Quantity (lbs)",
+                  accessor: "quantity"
+                },
+                {
+                  Header: "Expiration",
+                  accessor: "expiration"
+                },
+                {
+                  Header: "Reserve",
+                  Cell: row => (<button className="btn btn-outline-warning">Reserve</button>)
+                }
+              ]
+            }
+          defaultPageSize={10}
+          className="-striped -highlight"
+        />
+      </div>
+      <div className="col-lg-8 offset-lg-2">
+        <hr className="divider" />
+      </div>
+
+        {/* <div className="container table">
+          <div className="col-lg-3 col-md-6 offset-lg-6 offset-md-6">
               <div className="input-group searchbar">
                 <input type="text" className="form-control" placeholder="Search for..." />
                 <span className="input-group-btn">
@@ -70,229 +134,229 @@ export default class Main extends React.Component {
                   <br />
                 </span>
               </div>
-            </div>
+          </div>
 
             <div className="col-lg-8 offset-lg-2 text-left">
               <h2 className="available-heading">Available Items</h2>
-              <div className="table-responsive available">
-                <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-                  <table className="table table-striped">
-                    <thead className="table-header">
-                    <tr>
-                        <th>#</th>
-                        <th>Item</th>
-                        <th>Category</th>
-                        <th>Quantity (Lbs)</th>
-                        <th>Expiration (Days)</th>
-                        <th>Reserve</th>
-                      </tr>
-                  </thead>
-                    <tbody>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td><button onClick={this.openModal} type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,002</td>
-                        <td>amet</td>
-                        <td>consectetur</td>
-                        <td>adipiscing</td>
-                        <td>elit</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,003</td>
-                        <td>Integer</td>
-                        <td>nec</td>
-                        <td>odio</td>
-                        <td>Praesent</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,003</td>
-                        <td>libero</td>
-                        <td>Sed</td>
-                        <td>cursus</td>
-                        <td>ante</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,004</td>
-                        <td>dapibus</td>
-                        <td>diam</td>
-                        <td>Sed</td>
-                        <td>nisi</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,005</td>
-                        <td>Nulla</td>
-                        <td>quis</td>
-                        <td>sem</td>
-                        <td>at</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,006</td>
-                        <td>nibh</td>
-                        <td>elementum</td>
-                        <td>imperdiet</td>
-                        <td>Duis</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,007</td>
-                        <td>sagittis</td>
-                        <td>ipsum</td>
-                        <td>Praesent</td>
-                        <td>mauris</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,008</td>
-                        <td>Fusce</td>
-                        <td>nec</td>
-                        <td>tellus</td>
-                        <td>sed</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,009</td>
-                        <td>augue</td>
-                        <td>semper</td>
-                        <td>porta</td>
-                        <td>Mauris</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,010</td>
-                        <td>massa</td>
-                        <td>Vestibulum</td>
-                        <td>lacinia</td>
-                        <td>arcu</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,011</td>
-                        <td>eget</td>
-                        <td>nulla</td>
-                        <td>Class</td>
-                        <td>aptent</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,012</td>
-                        <td>taciti</td>
-                        <td>sociosqu</td>
-                        <td>ad</td>
-                        <td>litora</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,013</td>
-                        <td>torquent</td>
-                        <td>per</td>
-                        <td>conubia</td>
-                        <td>nostra</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,014</td>
-                        <td>per</td>
-                        <td>inceptos</td>
-                        <td>himenaeos</td>
-                        <td>Curabitur</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,015</td>
-                        <td>sodales</td>
-                        <td>ligula</td>
-                        <td>in</td>
-                        <td>libero</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,016</td>
-                        <td>sagittis</td>
-                        <td>ipsum</td>
-                        <td>Praesent</td>
-                        <td>mauris</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,017</td>
-                        <td>Fusce</td>
-                        <td>nec</td>
-                        <td>tellus</td>
-                        <td>sed</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,018</td>
-                        <td>augue</td>
-                        <td>semper</td>
-                        <td>porta</td>
-                        <td>Mauris</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,019</td>
-                        <td>massa</td>
-                        <td>Vestibulum</td>
-                        <td>lacinia</td>
-                        <td>arcu</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,020</td>
-                        <td>eget</td>
-                        <td>nulla</td>
-                        <td>Class</td>
-                        <td>aptent</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,021</td>
-                        <td>taciti</td>
-                        <td>sociosqu</td>
-                        <td>ad</td>
-                        <td>litora</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,022</td>
-                        <td>torquent</td>
-                        <td>per</td>
-                        <td>conubia</td>
-                        <td>nostra</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,023</td>
-                        <td>per</td>
-                        <td>inceptos</td>
-                        <td>himenaeos</td>
-                        <td>Curabitur</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                    <tr>
-                        <td>1,024</td>
-                        <td>sodales</td>
-                        <td>ligula</td>
-                        <td>in</td>
-                        <td>libero</td>
-                        <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
-                      </tr>
-                  </tbody>
-                  </table>
-                  <nav aria-label="Page navigation example">
-                    <ul className="pagination justify-content-end">
-                    <li className="page-item disabled">
+                <div className="table-responsive available">
+                  <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+                    <table className="table table-striped">
+                      <thead className="table-header">
+                        <tr>
+                          <th>#</th>
+                          <th>Item</th>
+                          <th>Category</th>
+                          <th>Quantity (Lbs)</th>
+                          <th>Expiration (Days)</th>
+                          <th>Reserve</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1,001</td>
+                          <td>Lorem</td>
+                          <td>ipsum</td>
+                          <td>dolor</td>
+                          <td>sit</td>
+                          <td><button onClick={this.openModal} type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,002</td>
+                          <td>amet</td>
+                          <td>consectetur</td>
+                          <td>adipiscing</td>
+                          <td>elit</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,003</td>
+                          <td>Integer</td>
+                          <td>nec</td>
+                          <td>odio</td>
+                          <td>Praesent</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,003</td>
+                          <td>libero</td>
+                          <td>Sed</td>
+                          <td>cursus</td>
+                          <td>ante</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,004</td>
+                          <td>dapibus</td>
+                          <td>diam</td>
+                          <td>Sed</td>
+                          <td>nisi</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,005</td>
+                          <td>Nulla</td>
+                          <td>quis</td>
+                          <td>sem</td>
+                          <td>at</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,006</td>
+                          <td>nibh</td>
+                          <td>elementum</td>
+                          <td>imperdiet</td>
+                          <td>Duis</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,007</td>
+                          <td>sagittis</td>
+                          <td>ipsum</td>
+                          <td>Praesent</td>
+                          <td>mauris</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,008</td>
+                          <td>Fusce</td>
+                          <td>nec</td>
+                          <td>tellus</td>
+                          <td>sed</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,009</td>
+                          <td>augue</td>
+                          <td>semper</td>
+                          <td>porta</td>
+                          <td>Mauris</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,010</td>
+                          <td>massa</td>
+                          <td>Vestibulum</td>
+                          <td>lacinia</td>
+                          <td>arcu</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,011</td>
+                          <td>eget</td>
+                          <td>nulla</td>
+                          <td>Class</td>
+                          <td>aptent</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,012</td>
+                          <td>taciti</td>
+                          <td>sociosqu</td>
+                          <td>ad</td>
+                          <td>litora</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,013</td>
+                          <td>torquent</td>
+                          <td>per</td>
+                          <td>conubia</td>
+                          <td>nostra</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,014</td>
+                          <td>per</td>
+                          <td>inceptos</td>
+                          <td>himenaeos</td>
+                          <td>Curabitur</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,015</td>
+                          <td>sodales</td>
+                          <td>ligula</td>
+                          <td>in</td>
+                          <td>libero</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,016</td>
+                          <td>sagittis</td>
+                          <td>ipsum</td>
+                          <td>Praesent</td>
+                          <td>mauris</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,017</td>
+                          <td>Fusce</td>
+                          <td>nec</td>
+                          <td>tellus</td>
+                          <td>sed</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,018</td>
+                          <td>augue</td>
+                          <td>semper</td>
+                          <td>porta</td>
+                          <td>Mauris</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,019</td>
+                          <td>massa</td>
+                          <td>Vestibulum</td>
+                          <td>lacinia</td>
+                          <td>arcu</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,020</td>
+                          <td>eget</td>
+                          <td>nulla</td>
+                          <td>Class</td>
+                          <td>aptent</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,021</td>
+                          <td>taciti</td>
+                          <td>sociosqu</td>
+                          <td>ad</td>
+                          <td>litora</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,022</td>
+                          <td>torquent</td>
+                          <td>per</td>
+                          <td>conubia</td>
+                          <td>nostra</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,023</td>
+                          <td>per</td>
+                          <td>inceptos</td>
+                          <td>himenaeos</td>
+                          <td>Curabitur</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                        <tr>
+                          <td>1,024</td>
+                          <td>sodales</td>
+                          <td>ligula</td>
+                          <td>in</td>
+                          <td>libero</td>
+                          <td><button type="button" className="btn btn-outline-warning">Reserve</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <nav aria-label="Page navigation example">
+                      <ul className="pagination justify-content-end">
+                      <li className="page-item disabled">
                         <a className="page-link" href="#" tabIndex="-1">Previous</a>
                       </li>
                     <li className="page-item"><a className="page-link" href="#">1</a></li>
@@ -307,7 +371,7 @@ export default class Main extends React.Component {
               </div>
               <hr className="divider" />
             </div>
-          </div>
+          </div> */}
         </section>
         <Modal
           isOpen={this.state.modalIsOpen}

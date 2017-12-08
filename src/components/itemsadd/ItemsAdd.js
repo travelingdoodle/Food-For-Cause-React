@@ -2,6 +2,10 @@
 import React from "react";
 import "./ItemsAdd.css";
 import Modal from 'react-modal';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 const customStyles = {
   overlay : {
@@ -29,16 +33,25 @@ export default class Main extends React.Component {
     super();
  
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      startDate: moment()
     };
  
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
  
   openModal() {
     this.setState({modalIsOpen: true});
+  }
+
+  // Date picker
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
   }
  
   afterOpenModal() {
@@ -49,6 +62,10 @@ export default class Main extends React.Component {
   closeModal() {
     this.setState({modalIsOpen: false});
   }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
+ }
  
   render() {
     return (
@@ -59,10 +76,10 @@ export default class Main extends React.Component {
                 <h3 className="section-heading">Donations</h3>
                 <hr />
                 <br />
-                <form action="" method="POST" role="form" />
+                <form action="" method="POST">
                     <div className="form-group">
-                        <label htmlFor="">Name</label>
-                        <input type="text" className="form-control" id="name" placeholder="Item Name..." />
+                        <label htmlFor="">Item</label>
+                        <input type="text" className="form-control" id="name" placeholder="Item Name..." required autoFocus />
                     </div>
                     <div className="form-group">
                         <label htmlFor="" id="category">Category</label>
@@ -78,13 +95,19 @@ export default class Main extends React.Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="">Quantity</label>
-                        <input type="text" className="form-control" id="quantity" placeholder="Quantity in pounds..." />
+                        <input type="text" className="form-control" id="quantity" placeholder="Quantity in pounds..." required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="">Expiration</label>
-                        <input type="text" className="form-control" id="expiration" data-provide="datepicker" placeholder="Days until expiration..." />
+                        {/* <input type="text" className="form-control" id="expiration" data-provide="datepicker" placeholder="Days until expiration..." /> */}
+                        <DatePicker className="form-control" id="expiration"
+                          selected={this.state.startDate}
+                          onChange={this.handleChange}
+                        />
+                    
                     </div>
                     <button onClick={this.openModal} className="btn btn-secondary add" type="button">Add Items!</button>
+              </form>
             </div>
         </div>
     </section>

@@ -20,9 +20,9 @@ const App = () =>
           <Route exact path="/reserve" component={Reserve} />
           <Route exact path="/donate" component={Donate} />
           <Route exact path="/profile" component={Profile} />
-          <Route component={Home} />
-        </Switch>
-      </Wrapper>
+          <Route component={Home} /> 
+        </Switch>   
+      </Wrapper>    
     </div>
    </Router>);
 
