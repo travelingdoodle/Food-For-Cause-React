@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
- 
+
 const customStyles = {
   content : {
     top                   : '50%',
@@ -34,33 +34,33 @@ const customStyles = {
     //   padding                    : '20px'
     // }
 };
- 
+
 export default class Test extends React.Component {
   constructor() {
     super();
- 
+
     this.state = {
       modalIsOpen: false
     };
- 
+
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
- 
+
   openModal() {
     this.setState({modalIsOpen: true});
   }
- 
+
   afterOpenModal() {
     // references are now sync'd and can be accessed.
     this.subtitle.style.color = '#f00';
   }
- 
+
   closeModal() {
     this.setState({modalIsOpen: false});
   }
- 
+
   render() {
     return (
       <div>
@@ -72,7 +72,7 @@ export default class Test extends React.Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
- 
+
           <h2 ref={subtitle => this.subtitle = subtitle}>Are You Sure?</h2>
           <button onClick={this.closeModal}>close</button>
           <form>
@@ -84,5 +84,5 @@ export default class Test extends React.Component {
     );
   }
 }
- 
+
 // ReactDOM.render(<Test />, appElement);

@@ -1,5 +1,5 @@
-import React from "react";
-import "./ItemsAvailable.css";
+import React from 'react';
+import './ItemsAvailable.css';
 import Modal from 'react-modal';
 
 // Import React Table
@@ -14,50 +14,50 @@ Object.assign(ReactTableDefaults, {
 })
 
 const customStyles = {
-  overlay : {
-    position          : 'fixed',
-    top               : 0,
-    left              : 0,
-    right             : 0,
-    bottom            : 0,
-    backgroundColor   : 'rgba(0, 0, 0, 0.75)',
-    zIndex            : 1000
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    zIndex: 1000,
   },
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    width                 : '45%'
-  }
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    width: '45%',
+  },
 };
- 
+
 export default class Main extends React.Component {
   constructor() {
     super();
- 
+
     this.state = {
       modalIsOpen: false,
     };
- 
+
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
- 
+
   openModal() {
-    this.setState({modalIsOpen: true});
+    this.setState({ modalIsOpen: true });
   }
- 
+
   afterOpenModal() {
     // references are now sync'd and can be accessed.
     this.subtitle.style.color = '#f00';
   }
- 
+
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({ modalIsOpen: false });
   }
 
   componentWillMount() {
@@ -69,16 +69,12 @@ export default class Main extends React.Component {
     return (
       <div>
         <section className="container content">
-        <div className="row">
-          <div className="col-lg-8 offset-lg-2 text-uppercase">
-            <h2 
-              style= {{
-                color: "maroon",
-                fontWeight: "600"
-              }}
-            >Notice:</h2>
-            <p style= {{fontWeight: "600"}}>As items are parishable, please review the expiration date and plan accordingly. Reserved items must be picked up within 24 hours, otherwise, they will be released. Thank you for your understanding.</p>
-            <hr className="divider" />
+          <div className="row">
+            <div className="col-lg-8 offset-lg-2 text-uppercase">
+              <h2 style={{ color: 'maroon', fontWeight: '600',}}> Notice: </h2>
+              <p style={{ fontWeight: '600' }}>As items are parishable, please review the expiration date and plan accordingly. Reserved items must be picked up within 24 hours, otherwise, they will be released. Thank you for your understanding.</p>
+              <hr className="divider" />
+            </div>
           </div>
         </div>
 
@@ -363,16 +359,16 @@ export default class Main extends React.Component {
                       <li className="page-item disabled">
                         <a className="page-link" href="#" tabIndex="-1">Previous</a>
                       </li>
-                      <li className="page-item"><a className="page-link" href="#">1</a></li>
-                      <li className="page-item"><a className="page-link" href="#">2</a></li>
-                      <li className="page-item"><a className="page-link" href="#">3</a></li>
-                      <li className="page-item">
+                    <li className="page-item"><a className="page-link" href="#">1</a></li>
+                    <li className="page-item"><a className="page-link" href="#">2</a></li>
+                    <li className="page-item"><a className="page-link" href="#">3</a></li>
+                    <li className="page-item">
                         <a className="page-link" href="#">Next</a>
                       </li>
-                    </ul>
-                    </nav>
-                  </div>
+                  </ul>
+                  </nav>
                 </div>
+              </div>
               <hr className="divider" />
             </div>
           </div> */}

@@ -1,5 +1,5 @@
-import React from "react";
-import "./UserInfo.css";
+import React from 'react';
+import './UserInfo.css';
 import Modal from 'react-modal';
 
 const customStyles = {
@@ -10,7 +10,7 @@ const customStyles = {
     right             : 0,
     bottom            : 0,
     backgroundColor   : 'rgba(0, 0, 0, 0.75)',
-    zIndex            : 1000
+    zIndex            : 1000,
   },
   content : {
     top                   : '50%',
@@ -19,35 +19,36 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    width                 : '30%'
-  }
+    width                 : '30%',
+  },
 };
- 
+
 export default class Main extends React.Component {
   constructor() {
     super();
- 
+
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
     };
- 
+
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
- 
+
   openModal() {
     this.setState({modalIsOpen: true});
   }
- 
+
   afterOpenModal() {
     // references are now sync'd and can be accessed.
     this.subtitle.style.color = '#f00';
   }
- 
+
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({ modalIsOpen: false });
   }
+
 
   componentWillMount() {
     Modal.setAppElement('body');
