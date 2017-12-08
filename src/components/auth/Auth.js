@@ -5,7 +5,7 @@ import "./Auth.css";
 
 
 const Login = () => (
-    <div className="container login"> 
+  <div className="container login">
     <form className="form-signin">
       <h2 className="form-signin-heading text-center">Log in</h2>
       <label htmlFor="inputEmail" className="sr-only">Email address</label>
