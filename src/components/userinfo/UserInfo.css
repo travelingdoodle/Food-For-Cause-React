@@ -32,14 +32,3 @@ hr {
 
 .reserved {
     margin: 50px 0 50px 0; }
-
-    @media (min-width: 640px) {
-        .bio {
-          overflow: hidden;
-          padding: 40px !important; } }
-
-    @media (max-width: 480px) {
-        .bio {
-            padding: 20px !important; }
-        .contact td {
-            padding-right: 10px; } }

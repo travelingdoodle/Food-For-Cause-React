@@ -20,17 +20,6 @@
 .searchbar {
   float: right; }
 
-.ReactTable {
-  line-height: 38px; }
-  .ReactTable .rt-thead.-header {
-    padding: 10px;
-    font-size: 16px;
-    text-transform: uppercase;
-    color: white;
-    font-weight: 700;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .75);
-    background: linear-gradient(#F4A460, #db9356); }
-
 .available-heading {
   float: left;
   text-transform: uppercase;
@@ -61,23 +50,15 @@
 .btn-outline-warning:hover,
 .btn-outline-warning:active {
   color: white !important;
+  /* background: linear-gradient(gold, goldenrod) !important; } */
   background: linear-gradient(#ffb732, #ffa500) !important; }
 
-  @media (max-width: 640px) {
-    .searchbar {
-      margin-bottom: 50px; } }
 
-  @media (min-width: 640px) {
-    .content {
-      padding: 20px !important; } }
+@media (min-width: 640px) {
+  .content-heading {
+    font-size: 50px; } }
 
-  @media (max-width: 480px) {
-    .content {
-      padding: 15px !important; }
-    .searchbar {
-      margin-bottom: 50px; } }
-
-  @media (min-width: 992px) {
-    .content-heading {
-      margin-top: 7rem; } } 
+@media (min-width: 992px) {
+  .content-heading {
+    margin-top: 7rem; } } 
       
