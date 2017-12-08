@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "./Auth.css";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './Auth.css';
 
 class Login extends Component {
   render() {

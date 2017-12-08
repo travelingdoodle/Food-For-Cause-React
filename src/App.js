@@ -1,13 +1,13 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Reserve from "./pages/Reserve";
-import Donate from "./pages/Donate";
-import Profile from "./pages/Profile";
-import Wrapper from "./components/wrapper/Wrapper";
-import "./App.css";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Reserve from './pages/Reserve';
+import Donate from './pages/Donate';
+import Profile from './pages/Profile';
+import Wrapper from './components/wrapper/Wrapper';
+import './App.css';
 
 const App = () =>
   (<Router>
@@ -20,10 +20,10 @@ const App = () =>
           <Route exact path="/reserve" component={Reserve} />
           <Route exact path="/donate" component={Donate} />
           <Route exact path="/profile" component={Profile} />
-          <Route component={Home} /> 
-        </Switch>       
+          <Route component={Home} />
+        </Switch>
       </Wrapper>
     </div>
-  </Router>);
+   </Router>);
 
 export default App;
