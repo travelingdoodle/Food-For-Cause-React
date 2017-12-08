@@ -21,11 +21,3 @@ label {
 
 .add {
   margin: 0 0 4.5px 2px; }
-
-  @media (min-width: 640px) {
-    .donator {
-      padding: 20px !important; } }
-
-  @media (max-width: 480px) {
-    .donator {
-      padding: 20px !important; } }

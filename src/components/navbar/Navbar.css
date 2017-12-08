@@ -15,6 +15,8 @@ a:hover {
 .navbar {
     background: linear-gradient(#569AAB, #45808f); }
     /* background: linear-gradient(#d95746, #c34e3f); } */
+    /* background-color: #569AAB !important; } */
+    /* background-color: rgb(69, 128, 143) !important; } */
     
 .navbar-logo {
     height: 2em; }
@@ -33,5 +35,5 @@ a:hover {
           visibility: hidden; 
         }
         #profileLink {
-            margin-top: -2.5rem; } }
+            margin-top: -22px; } }
     
