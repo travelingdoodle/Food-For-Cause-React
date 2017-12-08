@@ -67,7 +67,7 @@ router.put('/user', auth.required, (req, res, next) => {
   }).catch(next);
 });
 
-router.post('/users/login', (req, res, next) => {
+router.post('/login', (req, res, next) => {
 
   if (!req.body.user.email) {
     return res.status(422).json({ errors: { email: "can't be blank" } });
@@ -88,27 +88,27 @@ router.post('/users/login', (req, res, next) => {
   })(req, res, next);
 });
 
-router.post('/users', (req, res, next) => {
-  const userTest = new User();
+router.post('/users/login', (req, res, next) => {
+  // const userTest = new User();
 
-  userTest.username = 'rick';
-  userTest.email = 'test@test.test';
-  userTest.setPassword('test');
+  // userTest.username = 'rick';
+  // userTest.email = 'test@test.test';
+  // userTest.setPassword('test');
 
-  userTest.save().then(() => {
-    return res.json({ user: userTest.toAuthJSON() });
-    res.send('rick insterted');
-  }).catch(next);
-
-  // const user = new User();
-
-  // user.username = req.body.user.username;
-  // user.email = req.body.user.email;
-  // user.setPassword(req.body.user.password);
-
-  // user.save().then(() => {
-  //   return res.json({ user: user.toAuthJSON() });
+  // userTest.save().then(() => {
+  //   return res.json({ user: userTest.toAuthJSON() });
+  //   res.send('rick insterted');
   // }).catch(next);
+
+  const user = new User();
+
+  user.username = req.body.user.username;
+  user.email = req.body.user.email;
+  user.setPassword(req.body.user.password);
+
+  user.save().then(() => {
+    return res.json({ user: user.toAuthJSON() });
+  }).catch(next);
 });
 
 module.exports = router;

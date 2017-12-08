@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Auth.css';
 
-class Login extends Component {
-  render() {
-    return (
+// class Login extends Component {
+//   render() {
+//     return (
+const Login = () => (
       <div className="container login">
         <form className="form-signin" action="/users/login" method="post">
           <h2 className="form-signin-heading text-center">Log in</h2>
@@ -44,8 +45,8 @@ class Login extends Component {
           </p>
         </div>
       </div>
-    );
-  }
-}
+);
+//   }
+// }
 
 export default Login;
