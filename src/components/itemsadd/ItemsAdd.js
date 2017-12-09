@@ -25,8 +25,8 @@ const customStyles = {
 };
  
 export default class Main extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
  
     this.state = {
       modalIsOpen: false
@@ -52,42 +52,64 @@ export default class Main extends React.Component {
  
   render() {
     return (
-        <div>
+      <div>
         <section className="container donator">
-        <div className="row">
+          <div className="row">
             <div className="col-lg-8 mx-auto text-left">
-                <h3 className="section-heading">Donations</h3>
-                <hr />
-                <br />
-                <form action="" method="POST" role="form" />
-                    <div className="form-group">
-                        <label htmlFor="">Name</label>
-                        <input type="text" className="form-control" id="name" placeholder="Item Name..." />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="" id="category">Category</label>
-                        <select className="form-control" id="category">
-                            <option defaultValue="">All Categories</option>
-                            <option value="Proteins">Proteins</option>
-                            <option value="Grains">Grains</option>
-                            <option value="Vegetables">Vegetables</option>
-                            <option value="Fruits">Fruits</option>
-                            <option value="Dairy">Dairy</option>
-                            <option value="Oils">Oils</option>
-                        </select>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="">Quantity</label>
-                        <input type="text" className="form-control" id="quantity" placeholder="Quantity in pounds..." />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="">Expiration</label>
-                        <input type="text" className="form-control" id="expiration" data-provide="datepicker" placeholder="Days until expiration..." />
-                    </div>
-                    <button onClick={this.openModal} className="btn btn-secondary add" type="button">Add Items!</button>
+              <h3 className="section-heading">Donations</h3>
+              <hr />
+              <br />
+              <form action="" method="POST" role="form" />
+              <div className="form-group">
+                <label htmlFor="">Name</label>
+                <input
+                  onChange={props.handleInputChange}
+                  value={props.name}
+                  name="name"
+                  type="text"
+                  className="form-control"
+                  id="name"
+                  placeholder="Item Name..." />
+              </div>
+              <div className="form-group">
+                <label htmlFor="" id="category">Category</label>
+                <select className="form-control" id="category">
+                  <option defaultValue="">All Categories</option>
+                  <option value="Proteins">Proteins</option>
+                  <option value="Grains">Grains</option>
+                  <option value="Vegetables">Vegetables</option>
+                  <option value="Fruits">Fruits</option>
+                  <option value="Dairy">Dairy</option>
+                  <option value="Oils">Oils</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="">Quantity</label>
+                <input
+                  onChange={props.handleInputChange}
+                  value={props.quantity}
+                  name="quantity"
+                  type="text"
+                  className="form-control"
+                  id="quantity"
+                  placeholder="Quantity in pounds..." />
+              </div>
+              <div className="form-group">
+                <label htmlFor="">Expiration</label>
+                <input
+                  onChange={props.handleInputChange}
+                  value={props.expiration}
+                  name="expiration"
+                  type="text"
+                  className="form-control"
+                  id="expiration"
+                  data-provide="datepicker"
+                  placeholder="Days until expiration..." />
+              </div>
+              <button onClick={props.handleFormSubmit} className="btn btn-secondary add" type="button">Add Items!</button>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

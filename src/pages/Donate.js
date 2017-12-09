@@ -6,7 +6,7 @@ import Footer from '../components/footer/Footer';
 
 import Request from '../agent';
 
-class AddItem extends Component {
+class Donate extends Component {
   state = {
     name: "",
     category: "",
@@ -22,7 +22,7 @@ class AddItem extends Component {
       quantity: quantity,
       expiration: expiration,
     }
-    Request.Auth.register(item)
+    Request.Items.donate(item)
     .catch(err => console.log(err));
   }
 

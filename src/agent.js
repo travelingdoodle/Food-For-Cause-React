@@ -39,7 +39,9 @@ const Auth = {
 
 const Items = {
   all: page =>
-    requests.get('/reserve/items'),
+    requests.get('/items'),
+  donate: (name, category, quantity, expiration) => 
+    requests.post('/items', { item: { name, category, quantity, expiration } }),
 };
 
 const Profile = {
