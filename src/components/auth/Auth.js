@@ -17,7 +17,7 @@ const Login = () => (
             id="inputEmail"
             className="form-control"
             placeholder="Email address"
-            required
+            // required
             autoFocus
           />
           <label htmlFor="inputPassword" className="sr-only">
@@ -28,15 +28,15 @@ const Login = () => (
             id="inputPassword"
             className="form-control"
             placeholder="Password"
-            required
+            // required
           />
           <div className="checkbox">
             <label>
               <input type="checkbox" value="remember-me" /> Remember me
             </label>
           </div>
-          <button className="btn btn-lg btn-secondary btn-block" type="submit">
-            Log in
+          <button className="btn btn-lg btn-secondary btn-block" type="">
+            <a href="/donate">Log in</a>
           </button>
         </form>
         <div id="create" className="text-center">

@@ -3,7 +3,7 @@ import './NewUser.css';
 
 const Register = () => (
   <div className="container register ">
-    <form className="form-signin" action="/user" method="post">
+    <form className="form-signin" action="/user" method="">
       <h2 className="form-signin-heading text-left">Register</h2>
       <hr className="light" />
       <br />
@@ -15,7 +15,7 @@ const Register = () => (
         id="inputOrganization"
         className="form-control"
         placeholder="Organization"
-        required
+        // required
         autoFocus
       />
       <br />
@@ -27,7 +27,7 @@ const Register = () => (
         id="inputName"
         className="form-control"
         placeholder="Your Name"
-        required
+        // required
       />
       <br />
       <label htmlFor="inputEmail" className="sr-only">
@@ -38,7 +38,7 @@ const Register = () => (
         id="inputEmail"
         className="form-control"
         placeholder="Email address"
-        required
+        // required
       />
       <br />
       <label htmlFor="inputEmail" className="sr-only">
@@ -49,7 +49,7 @@ const Register = () => (
         id="inputEmail"
         className="form-control"
         placeholder="Confirm Email"
-        required
+        // required
       />
       <br />
       <label htmlFor="inputPassword" className="sr-only">
@@ -60,7 +60,7 @@ const Register = () => (
         id="inputPassword"
         className="form-control"
         placeholder="Create Password"
-        required
+        // required
       />
       <br />
 
@@ -99,8 +99,8 @@ const Register = () => (
       <br />
       <div className="row">
         <div className="col-lg-10 offset-lg-1">
-          <button className="btn btn-lg btn-secondary btn-block" type="submit">
-            Create New Account
+          <button className="btn btn-lg btn-secondary btn-block" type="text">
+            <a href="/donate">Create New Account</a>
           </button>
         </div>
       </div>
