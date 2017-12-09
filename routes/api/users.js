@@ -67,7 +67,7 @@ router.put('/user', auth.required, (req, res, next) => {
   }).catch(next);
 });
 
-router.post('/login', (req, res, next) => {
+router.post('/user/login', (req, res, next) => {
 
   if (!req.body.user.email) {
     return res.status(422).json({ errors: { email: "can't be blank" } });
@@ -84,6 +84,7 @@ router.post('/login', (req, res, next) => {
       user.token = user.generateJWT();
       return res.json({ user: user.toAuthJSON() });
     }
+
     return res.status(422).json(info);
   })(req, res, next);
 });
