@@ -89,26 +89,26 @@ router.post('/users/login', (req, res, next) => {
 });
 
 router.post('/users', (req, res, next) => {
-  const userTest = new User();
+  // const userTest = new User();
 
-  userTest.username = 'rick';
-  userTest.email = 'test@test.test';
-  userTest.setPassword('test');
+  // userTest.username = 'rick';
+  // userTest.email = 'test@test.test';
+  // userTest.setPassword('test');
 
-  userTest.save().then(() => {
-    return res.json({ user: userTest.toAuthJSON() });
-    res.send('rick insterted');
-  }).catch(next);
-
-  // const user = new User();
-
-  // user.username = req.body.user.username;
-  // user.email = req.body.user.email;
-  // user.setPassword(req.body.user.password);
-
-  // user.save().then(() => {
-  //   return res.json({ user: user.toAuthJSON() });
+  // userTest.save().then(() => {
+  //   return res.json({ user: userTest.toAuthJSON() });
+  //   res.send('rick insterted');
   // }).catch(next);
+
+  const user = new User();
+
+  user.username = req.body.user.username;
+  user.email = req.body.user.email;
+  user.setPassword(req.body.user.password);
+
+  user.save().then(() => {
+    return res.json({ user: user.toAuthJSON() });
+  }).catch(next);
 });
 
 module.exports = router;
