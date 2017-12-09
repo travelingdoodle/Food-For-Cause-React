@@ -16,8 +16,15 @@ class Register extends Component {
    
   // }
 
-  registerUser = (email, password, username, organization) => {
-    Request.Auth.register(email, password, username, organization)
+  registerUser = (organization, username, email, password) => {
+    let user = {
+      organization: organization,
+      username: username,
+      email: email,
+      password: password,
+
+    }
+    Request.Auth.register(user)
     .catch(err => console.log(err));
   }
 
@@ -32,7 +39,7 @@ class Register extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     
-    this.registerUser(this.state.email, this.state.password, this.state.username, this.state.organization);
+    this.registerUser(this.state.organization, this.state.username, this.state.email, this.state.password);
   }
  
   render() {

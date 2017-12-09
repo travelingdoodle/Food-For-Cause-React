@@ -68,23 +68,14 @@ router.put('/user', auth.required, (req, res, next) => {
 });
 
 router.post('/users/login', (req, res, next) => {
-  const email = 'test@test.test';
-  const password = 'test';
-  if (!email) {
+
+  if (!req.body.user.email) {
     return res.status(422).json({ errors: { email: "can't be blank" } });
   }
 
-  if (!password) {
+  if (!req.body.user.password) {
     return res.status(422).json({ errors: { password: "can't be blank" } });
   }
-
-  // if (!req.body.user.email) {
-  //   return res.status(422).json({ errors: { email: "can't be blank" } });
-  // }
-
-  // if (!req.body.user.password) {
-  //   return res.status(422).json({ errors: { password: "can't be blank" } });
-  // }
 
   passport.authenticate('local', { session: false }, (err, user, info) => {
     // if (err) { return next(err); }
@@ -101,6 +92,12 @@ router.post('/users/login', (req, res, next) => {
   })(req, res, next);
 });
 
+router.get('/users', (req, res, next) => {
+  User.find({}, (err, users) => {
+    res.json(users);
+  });
+});
+
 router.post('/users', (req, res, next) => {
   // const userTest = new User();
 
@@ -112,12 +109,14 @@ router.post('/users', (req, res, next) => {
   //   return res.json({ user: userTest.toAuthJSON() });
   //   res.send('rick insterted');
   // }).catch(next);
-
+  console.log(req.body.user.organization);
+  console.log(typeof (req.body.user.organization.password));
   const user = new User();
 
-  user.username = req.body.user.username;
-  user.email = req.body.user.email;
-  user.setPassword(req.body.user.password);
+  user.organization = req.body.user.organization.organization;
+  user.username = req.body.user.organization.username;
+  user.email = req.body.user.organization.email;
+  user.setPassword(req.body.user.organization.password);
 
   user.save().then(() => {
     return res.json({ user: user.toAuthJSON() });
