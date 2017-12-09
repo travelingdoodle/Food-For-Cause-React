@@ -89,6 +89,7 @@ router.post('/login', (req, res, next) => {
 });
 
 router.post('/users/login', (req, res, next) => {
+  // // test data to insert the user into the db, cause I couldn't remember how to make a seeder
   // const userTest = new User();
 
   // userTest.username = 'rick';

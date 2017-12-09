@@ -76,7 +76,6 @@ export default class Main extends React.Component {
               <hr className="divider" />
             </div>
           </div>
-        </div>
 
         <div className="col-lg-10 offset-lg-1 text-center">
           <ReactTable
@@ -372,6 +371,7 @@ export default class Main extends React.Component {
               <hr className="divider" />
             </div>
           </div> */}
+          
         </section>
         <Modal
           isOpen={this.state.modalIsOpen}
