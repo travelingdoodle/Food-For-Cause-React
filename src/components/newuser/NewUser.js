@@ -3,7 +3,7 @@ import './NewUser.css';
 
 const Register = props => (
   <div className="container register ">
-    <form className="form-signin" action="/user" method="post">
+    <form className="form-signin" onSubmit={this.submitForm(organization, username, email, password)}>
       <h2 className="form-signin-heading text-left">Register</h2>
       <hr className="light" />
       <br />
@@ -11,6 +11,7 @@ const Register = props => (
         Organization
       </label>
       <input
+        value={props.organization}
         type="Organization"
         id="inputOrganization"
         className="form-control"
@@ -34,6 +35,7 @@ const Register = props => (
         Email Address
       </label>
       <input
+        value={props.email}
         type="email"
         id="inputEmail"
         className="form-control"
@@ -41,21 +43,23 @@ const Register = props => (
         required
       />
       <br />
-      <label htmlFor="inputEmail" className="sr-only">
+      {/* <label htmlFor="inputEmail" className="sr-only">
         Confirm Email
       </label>
       <input
+        value={props.email}
         type="email"
         id="inputEmail"
         className="form-control"
         placeholder="Confirm Email"
         required
-      />
+      /> */}
       <br />
       <label htmlFor="inputPassword" className="sr-only">
         Create Password
       </label>
       <input
+        value={props.password}
         type="password"
         id="inputPassword"
         className="form-control"
