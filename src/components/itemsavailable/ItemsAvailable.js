@@ -80,12 +80,12 @@ export default class Main extends React.Component {
         <div className="col-lg-10 offset-lg-1 text-center">
           <ReactTable
           data={[{
-            itemID: "hello", 
-            item: "hello",
-            category: "hello",
-            quantity: "hello",
-            expiration: "hello",
-            reserve: "hello"
+            itemID: "1", 
+            item: "Fish",
+            category: "Proteins",
+            quantity: "100",
+            expiration: "2",
+            reserve: "0"
           }]}
           columns={[
                 {
@@ -112,7 +112,7 @@ export default class Main extends React.Component {
                 },
                 {
                   Header: "Reserve",
-                  Cell: row => (<button className="btn btn-outline-warning">Reserve</button>)
+                  cell: row => (<button onClick={this.openModal} className="btn btn-outline-warning">Reserve</button>)
                 }
               ]
             }

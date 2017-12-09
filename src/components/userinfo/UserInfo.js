@@ -58,11 +58,11 @@ export default class Main extends React.Component {
     return (
       <div>
         <main role="main">
-        <div className="container bio">
+          <div className="container bio">
           <div className="row">
             <div className="col-lg-4 offset-lg-4">
               <img className="rounded-circle" src="https://www.catholic.edu/assets/images/default_profile.jpg" alt="Placeholder" height="150" />
-              <h2><span>Name/Organization</span></h2>
+              <h2><span>Food Bank of Kansas City</span></h2>
               <br />
             </div>
           </div>
@@ -77,7 +77,7 @@ export default class Main extends React.Component {
                     <td>
                       <h5>Phone Number</h5>
                     </td>
-                    <td><span>(555) 555-5555</span>
+                    <td><span>(913) 209-3131</span>
                       <p><a className="btn btn-outline-info" role="button">Edit</a></p>
                     </td>
                   </tr>
@@ -85,7 +85,7 @@ export default class Main extends React.Component {
                     <td>
                       <h5>Email Address</h5>
                     </td>
-                    <td><span>none@none.com</span>
+                    <td><span>contact@harvesters.com</span>
                       <p><a className="btn btn-outline-info" role="button">Edit</a></p>
                     </td>
                   </tr>
@@ -93,14 +93,14 @@ export default class Main extends React.Component {
                     <td>
                       <h5>Address</h5>
                     </td>
-                    <td><span>123 N Main St<br /></span>
-                      <span>Kansas City, MO 64111<br /></span>
+                    <td><span>3801 Topping Ave<br /></span>
+                      <span>Kansas City, MO 64129<br /></span>
                       <p><a className="btn btn-outline-info" role="button">Edit</a></p>
                     </td>
                   </tr>
                 </tbody>
               </table>
-                <hr />
+              <hr />
             </div>
           </div>
 
@@ -109,7 +109,7 @@ export default class Main extends React.Component {
               <div className="col-lg-8 offset-lg-2 text-left">
                 <h3>Reserved items</h3>
                 <div className="table-responsive">
-                    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+                  <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
                       <table className="table table-striped">
                         <thead>
                           <tr>
@@ -123,35 +123,35 @@ export default class Main extends React.Component {
                         </thead>
                         <tbody>
                           <tr>
-                            <td>1,001</td>
-                            <td>Lorem</td>
-                            <td>ipsum</td>
-                            <td>dolor</td>
-                            <td>sit</td>
+                            <td>857</td>
+                            <td>Rice</td>
+                            <td>Grains</td>
+                            <td>80 lbs</td>
+                            <td>365</td>
                             <td><button onClick={this.openModal} type="button" className="btn btn-danger">Remove</button></td>
                           </tr>
                           <tr>
                             <td>1,002</td>
-                            <td>amet</td>
-                            <td>consectetur</td>
-                            <td>adipiscing</td>
-                            <td>elit</td>
+                            <td>Beef</td>
+                            <td>Proteins</td>
+                            <td>65 lbs</td>
+                            <td>2</td>
                             <td><button type="button" className="btn btn-danger">Remove</button></td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
-                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="container listed">
-              <div className="row">
+            <div className="row">
                 <div className="col-lg-8 offset-lg-2 text-left">
                   <h3>Listed items</h3>
                   <div className="table-responsive">
-                      <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+                    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
                         <table className="table table-striped">
                           <thead>
                             <tr>
@@ -165,32 +165,32 @@ export default class Main extends React.Component {
                           </thead>
                           <tbody>
                             <tr>
-                              <td>1,001</td>
-                              <td>Lorem</td>
-                              <td>ipsum</td>
-                              <td>dolor</td>
-                              <td>sit</td>
+                              <td>857</td>
+                              <td>Rice</td>
+                              <td>Grains</td>
+                              <td>80 lbs</td>
+                              <td>365</td>
                               <td><button type="button" className="btn btn-danger">Remove</button></td>
                             </tr>
                             <tr>
                               <td>1,002</td>
-                              <td>amet</td>
-                              <td>consectetur</td>
-                              <td>adipiscing</td>
-                              <td>elit</td>
+                              <td>Beef</td>
+                              <td>Proteins</td>
+                              <td>65 lbs</td>
+                              <td>2</td>
                               <td><button type="button" className="btn btn-danger">Remove</button></td>
                             </tr>
                           </tbody>
                         </table>
                         <hr className="divider" />
                       </div>
-                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
           </div>
-          </main>
-            <Modal
+        </div>
+        </main>
+        <Modal
               isOpen={this.state.modalIsOpen}
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
