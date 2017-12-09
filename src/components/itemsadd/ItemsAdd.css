@@ -1,0 +1,31 @@
+.donator {
+  margin-bottom: 4rem; }
+
+.section-heading {
+  text-transform: uppercase;
+  font-weight: 400; }
+
+label {
+  margin-left: 5px;
+  font-size: 18px; }
+
+#name {
+  width: 20rem; }
+
+#category {
+  width: 12rem; }
+
+.form-group {
+  margin-right: 5px;
+  display: inline-block; }
+
+.add {
+  margin: 0 0 4.5px 2px; }
+
+  @media (min-width: 640px) {
+    .donator {
+      padding: 20px !important; } }
+
+  @media (max-width: 480px) {
+    .donator {
+      padding: 20px !important; } }

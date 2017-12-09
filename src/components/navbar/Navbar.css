@@ -1,0 +1,37 @@
+a {
+    color: rgba(255,255,255,.5);
+    text-decoration: none;
+    padding-right: .5rem;
+    padding-left: .5rem; }
+
+a:hover {
+    color: rgba(255,255,255,.8);
+    text-decoration: none; }
+
+.nav-link {
+    text-transform: uppercase;
+    font-weight: 500; }
+
+.navbar {
+    background: linear-gradient(#569AAB, #45808f); }
+    /* background: linear-gradient(#d95746, #c34e3f); } */
+    
+.navbar-logo {
+    height: 2em; }
+
+.navbar-expand-md .navbar-nav>.active>a,
+.navbar-expand-md .navbar-nav>.active>a:focus,
+.navbar-expand-md .navbar-nav>.active>a:hover {
+    color: white; }
+
+#nav-pic {
+    margin: 8px 0; }
+
+    @media (max-width: 480px) {
+        /* Removing profile pic from nav on mobile  */
+        #nav-pic {
+          visibility: hidden; 
+        }
+        #profileLink {
+            margin-top: -2.5rem; } }
+    
