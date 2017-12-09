@@ -52,19 +52,23 @@ router.put('/:items', auth.required, (req, res, next) => {
   });
 });
 
+router.get('/items', (req, res, next) => {
+  Item.find({}, (err, items) => {
+    res.json(items);
+  });
+});
+
 router.post('/items', (req, res, next) => {
-  const itemTest = new Item();
+  const item = new Item();
 
-  itemTest.name = 'fish';
-  itemTest.category = 'protein';
-  itemTest.quantity = 100;
-  itemTest.expiration = 1;
-  itemTest.reserved = 0;
-  itemTest.donor = '5a27655d2a983c2cd341196b';
+  item.name = req.body.item.name;
+  item.category = req.body.item.category;
+  item.quantity = req.body.item.quantity;
+  item.expiration = req.body.item.expiration;
 
-  itemTest.save().then(() => {
-    return res.json({ item: itemTest.toJSONfor() });
-    res.send('test items inserted');
+  item.save().then(() => {
+    return res.json({ item: item.toJSONfor() });
+    res.send('items inserted');
   }).catch(next);
 });
 

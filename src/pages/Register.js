@@ -11,10 +11,6 @@ class Register extends Component {
     username: "",
     organization: "",
   };
-  // constructor(props) {
-  //   super(props);
-   
-  // }
 
   registerUser = (organization, username, email, password) => {
     let user = {
