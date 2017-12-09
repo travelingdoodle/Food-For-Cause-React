@@ -11,19 +11,10 @@ class Register extends Component {
     username: "",
     organization: "",
   };
-  constructor(props) {
-    super(props);
-    
-
-    // this.changeEmail = ev => this.props.onChangeEmail(ev.target.value);
-    // this.changePassword = ev => this.props.onChangePassword(ev.target.value);
-    // this.changeUsername = ev => this.props.onChangeUsername(ev.target.value);
-    // this.changeOrganization = ev => this.props.onChangeUsername(ev.target.value);
-    // this.submitForm = (username, email, password) => ev => {
-    //   ev.preventDefault();
-    //   this.props.onSubmit(username, email, password);
-    // };
-  }
+  // constructor(props) {
+  //   super(props);
+   
+  // }
 
   registerUser = (email, password, username, organization) => {
     Request.Auth.register(email, password, username, organization)

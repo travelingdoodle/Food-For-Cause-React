@@ -13,6 +13,7 @@ const Register = props => (
       <input
         onChange={props.handleInputChange}
         value={props.organization}
+        name="organization"
         type="text"
         id="inputOrganization"
         className="form-control"
@@ -27,6 +28,7 @@ const Register = props => (
       <input
         onChange={props.handleInputChange}
         value={props.username}
+        name="username"
         type="text"
         id="inputName"
         className="form-control"
@@ -40,6 +42,7 @@ const Register = props => (
       <input
         onChange={props.handleInputChange}
         value={props.email}
+        name="email"
         type="text"
         id="inputEmail"
         className="form-control"
@@ -65,6 +68,7 @@ const Register = props => (
       <input
         onChange={props.handleInputChange}
         value={props.password}
+        name="password"
         type="text"
         id="inputPassword"
         className="form-control"
