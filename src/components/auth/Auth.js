@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "./Auth.css";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './Auth.css';
 
 const Login = props => (
   <div className="container login">
