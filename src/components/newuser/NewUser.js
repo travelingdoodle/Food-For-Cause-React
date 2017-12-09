@@ -3,7 +3,7 @@ import './NewUser.css';
 
 const Register = props => (
   <div className="container register ">
-    <form className="form-signin" onSubmit={this.submitForm(organization, username, email, password)}>
+    <form className="form-signin">
       <h2 className="form-signin-heading text-left">Register</h2>
       <hr className="light" />
       <br />
@@ -11,8 +11,9 @@ const Register = props => (
         Organization
       </label>
       <input
+        onChange={props.handleInputChange}
         value={props.organization}
-        type="Organization"
+        type="text"
         id="inputOrganization"
         className="form-control"
         placeholder="Organization"
@@ -24,7 +25,9 @@ const Register = props => (
         Your Name
       </label>
       <input
-        type="Name"
+        onChange={props.handleInputChange}
+        value={props.username}
+        type="text"
         id="inputName"
         className="form-control"
         placeholder="Your Name"
@@ -35,8 +38,9 @@ const Register = props => (
         Email Address
       </label>
       <input
+        onChange={props.handleInputChange}
         value={props.email}
-        type="email"
+        type="text"
         id="inputEmail"
         className="form-control"
         placeholder="Email address"
@@ -59,8 +63,9 @@ const Register = props => (
         Create Password
       </label>
       <input
+        onChange={props.handleInputChange}
         value={props.password}
-        type="password"
+        type="text"
         id="inputPassword"
         className="form-control"
         placeholder="Create Password"
@@ -68,7 +73,7 @@ const Register = props => (
       />
       <br />
 
-      <div className="row">
+      {/* <div className="row">
         <div className="col-lg-12 text-left">
           <h5 className="role">Please Choose Your Role</h5>
           <hr className="light" />
@@ -100,10 +105,10 @@ const Register = props => (
           </div>
         </div>
       </div>
-      <br />
+      <br /> */}
       <div className="row">
         <div className="col-lg-10 offset-lg-1">
-          <button className="btn btn-lg btn-secondary btn-block" type="submit">
+          <button onClick={props.handleFormSubmit} className="btn btn-lg btn-secondary btn-block" type="submit">
             Create New Account
           </button>
         </div>
