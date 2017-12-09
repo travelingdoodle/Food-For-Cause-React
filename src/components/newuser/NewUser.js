@@ -1,7 +1,7 @@
 import React from 'react';
 import './NewUser.css';
 
-const Register = () => (
+const Register = props => (
   <div className="container register ">
     <form className="form-signin" action="/user" method="post">
       <h2 className="form-signin-heading text-left">Register</h2>

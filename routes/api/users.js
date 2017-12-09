@@ -67,18 +67,30 @@ router.put('/user', auth.required, (req, res, next) => {
   }).catch(next);
 });
 
-router.post('/user/login', (req, res, next) => {
-
-  if (!req.body.user.email) {
+router.post('/users/login', (req, res, next) => {
+  const email = 'test@test.test';
+  const password = 'test';
+  if (!email) {
     return res.status(422).json({ errors: { email: "can't be blank" } });
   }
 
-  if (!req.body.user.password) {
+  if (!password) {
     return res.status(422).json({ errors: { password: "can't be blank" } });
   }
 
+  // if (!req.body.user.email) {
+  //   return res.status(422).json({ errors: { email: "can't be blank" } });
+  // }
+
+  // if (!req.body.user.password) {
+  //   return res.status(422).json({ errors: { password: "can't be blank" } });
+  // }
+
   passport.authenticate('local', { session: false }, (err, user, info) => {
-    if (err) { return next(err); }
+    // if (err) { return next(err); }
+    if (err) {
+      return res.status(200).json({ errors: { other: err, user1: user, info1: info } });
+    }
 
     if (user) {
       user.token = user.generateJWT();
@@ -89,7 +101,7 @@ router.post('/user/login', (req, res, next) => {
   })(req, res, next);
 });
 
-router.post('/users/login', (req, res, next) => {
+router.post('/users', (req, res, next) => {
   // const userTest = new User();
 
   // userTest.username = 'rick';
