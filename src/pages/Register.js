@@ -22,7 +22,6 @@ class Register extends Component {
       username: username,
       email: email,
       password: password,
-
     }
     Request.Auth.register(user)
     .catch(err => console.log(err));
