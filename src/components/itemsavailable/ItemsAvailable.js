@@ -77,7 +77,7 @@ export default class Main extends React.Component {
             </div>
           </div>
 
-        <div className="col-lg-10 offset-lg-1 text-center">
+        <div className="col-lg-8 offset-lg-2 text-center">
           <ReactTable
           data={[{
             itemID: "1", 
@@ -112,7 +112,7 @@ export default class Main extends React.Component {
                 },
                 {
                   Header: "Reserve",
-                  cell: row => (<button onClick={this.openModal} className="btn btn-outline-warning">Reserve</button>)
+                  Cell: row => (<button onClick={this.openModal} className="btn btn-outline-warning">Reserve</button>)
                 }
               ]
             }
