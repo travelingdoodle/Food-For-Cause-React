@@ -99,16 +99,6 @@ router.get('/users', (req, res, next) => {
 });
 
 router.post('/users', (req, res, next) => {
-  // const userTest = new User();
-
-  // userTest.username = 'rick';
-  // userTest.email = 'test@test.test';
-  // userTest.setPassword('test');
-
-  // userTest.save().then(() => {
-  //   return res.json({ user: userTest.toAuthJSON() });
-  //   res.send('rick insterted');
-  // }).catch(next);
   console.log(req.body.user.organization);
   console.log(typeof (req.body.user.organization.password));
   const user = new User();
