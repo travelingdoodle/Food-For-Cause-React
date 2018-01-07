@@ -50,22 +50,24 @@ UserSchema.methods.generateJWT = () => {
   return jwt.sign({
     id: this.id,
     username: this.username,
-    exp: parseInt(Date.getTime() / 1000),
+    exp: parseInt(exp.getTime() / 1000),
   }, secret);
 };
 
-UserSchema.methods.toAuthJSON = () => ({
-  organization: this.organization,
-  username: this.username,
-  email: this.email,
-  token: this.generateJWT(),
-  phoneNumber: this.phoneNumber,
-  image: this.image,
-  address: this.address,
-  pickupTime: this.pickupTime,
-  // Default value of 0 means user is not a recipient, aka a donor
-  recipient: this.recipient,
-});
+UserSchema.methods.toAuthJSON = function () {
+  return {
+    organization: this.organization,
+    username: this.username,
+    email: this.email,
+    token: this.generateJWT(),
+    phoneNumber: this.phoneNumber,
+    image: this.image,
+    address: this.address,
+    pickupTime: this.pickupTime,
+    // Default value of 0 means user is not a recipient, aka a donor
+    recipient: this.recipient,
+  };
+};
 
 UserSchema.methods.toProfileJSONFor = User => ({
   username: this.username,

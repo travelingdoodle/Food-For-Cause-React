@@ -20,16 +20,18 @@ class Login extends React.Component {
     event.preventDefault();
   }
   render() {
+    const email = this.props.email;
+    const password = this.props.password;
     return (
       <div className="container login">
-        <form className="form-signin" action="/users/login" method="post">
+        <form className="form-signin" onSubmit={this.handleFormSubmit(email, password)}>
           <h2 className="form-signin-heading text-center">Log in</h2>
           <label htmlFor="inputEmail" className="sr-only">
         Email address
           </label>
           <input
             onChange={this.handleInputChange}
-            value={this.email}
+            value={email}
             name="email"
             type="email"
             id="inputEmail"
@@ -43,7 +45,7 @@ class Login extends React.Component {
           </label>
           <input
             onChange={this.handleInputChange}
-            value={this.password}
+            value={password}
             name="password"
             type="password"
             id="inputPassword"
