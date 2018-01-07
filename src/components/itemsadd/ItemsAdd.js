@@ -1,56 +1,69 @@
 
-import React from "react";
-import "./ItemsAdd.css";
+import React from 'react';
 import Modal from 'react-modal';
+import './ItemsAdd.css';
 
 const customStyles = {
-  overlay : {
-    position          : 'fixed',
-    top               : 0,
-    left              : 0,
-    right             : 0,
-    bottom            : 0,
-    backgroundColor   : 'rgba(0, 0, 0, 0.75)',
-    zIndex            : 1000
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    zIndex: 1000,
   },
-    content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)',
-        width                 : '25%'
-      }
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    width: '25%',
+  },
 };
- 
+
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
- 
+
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
     };
- 
+
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
- 
+
   openModal() {
-    this.setState({modalIsOpen: true});
+    this.setState({ modalIsOpen: true });
   }
- 
+
   afterOpenModal() {
     // references are now sync'd and can be accessed.
     this.subtitle.style.color = '#f00';
   }
- 
+
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({ modalIsOpen: false });
   }
- 
-  render() {
+
+
+  handleInputChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleFormSubmit(event) {
+    this.setState({ value: event.target.value });
+    event.preventDefault();
+  }
+
+  render(props) {
     return (
       <div>
         <section className="container donator">
@@ -59,12 +72,12 @@ export default class Main extends React.Component {
               <h3 className="section-heading">Donations</h3>
               <hr />
               <br />
-              <form action="" method="POST" role="form" />
+              <form action="/api/items" method="POST" role="form" />
               <div className="form-group">
                 <label htmlFor="">Name</label>
                 <input
-                  onChange={props.handleInputChange}
-                  value={props.name}
+                  onChange={this.handleInputChange}
+                  value={this.name}
                   name="name"
                   type="text"
                   className="form-control"
@@ -75,19 +88,19 @@ export default class Main extends React.Component {
                 <label htmlFor="" id="category">Category</label>
                 <select className="form-control" id="category">
                   <option defaultValue="">All Categories</option>
-                  <option value="Proteins">Proteins</option>
-                  <option value="Grains">Grains</option>
-                  <option value="Vegetables">Vegetables</option>
-                  <option value="Fruits">Fruits</option>
-                  <option value="Dairy">Dairy</option>
-                  <option value="Oils">Oils</option>
+                  <option name="Proteins" value="Proteins">Proteins</option>
+                  <option name="Grains" value="Grains">Grains</option>
+                  <option name="Vegetables" value="Vegetables">Vegetables</option>
+                  <option name="Fruits" value="Fruits">Fruits</option>
+                  <option name="Dairy" value="Dairy">Dairy</option>
+                  <option name="Oils" value="Oils">Oils</option>
                 </select>
               </div>
               <div className="form-group">
                 <label htmlFor="">Quantity</label>
                 <input
-                  onChange={props.handleInputChange}
-                  value={props.quantity}
+                  onChange={this.handleInputChange}
+                  value={this.quantity}
                   name="quantity"
                   type="text"
                   className="form-control"
@@ -97,8 +110,8 @@ export default class Main extends React.Component {
               <div className="form-group">
                 <label htmlFor="">Expiration</label>
                 <input
-                  onChange={props.handleInputChange}
-                  value={props.expiration}
+                  onChange={this.handleInputChange}
+                  value={this.expiration}
                   name="expiration"
                   type="text"
                   className="form-control"
@@ -106,7 +119,7 @@ export default class Main extends React.Component {
                   data-provide="datepicker"
                   placeholder="Days until expiration..." />
               </div>
-              <button onClick={props.handleFormSubmit} className="btn btn-secondary add" type="button">Add Items!</button>
+              <button onClick={this.handleFormSubmit} className="btn btn-secondary add" type="button">Add Items!</button>
             </div>
           </div>
         </section>
