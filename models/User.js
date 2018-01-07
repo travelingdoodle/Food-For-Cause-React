@@ -49,7 +49,7 @@ UserSchema.methods.generateJWT = () => {
 
   return jwt.sign({
     id: this.id,
-    username: this.username,
+    email: this.email,
     exp: parseInt(exp.getTime() / 1000),
   }, secret);
 };

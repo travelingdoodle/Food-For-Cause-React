@@ -76,8 +76,8 @@ router.post('/users/login', (req, res, next) => {
   if (!req.body.user.password) {
     return res.status(422).json({ errors: { password: "can't be blank" } });
   }
-
-  passport.authenticate('local', { session: false }, (err, user, info) => {
+  // , successReturnToOrRedirect: '../donate', failureRedirect: '../login'
+  passport.authenticate('local', { session: true }, (err, user, info) => {
     // if (err) { return next(err); }
     if (err) {
       return res.status(200).json({ errors: { other: err, user1: user, info1: info } });
@@ -86,6 +86,9 @@ router.post('/users/login', (req, res, next) => {
     if (user) {
       user.token = user.generateJWT();
       return res.json({ user: user.toAuthJSON() });
+      console.log('user logged in');
+      // res.redirect('/donate');
+      // return (req.user.email);
     }
 
     return res.status(422).json(info);

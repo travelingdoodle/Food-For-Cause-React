@@ -3,31 +3,31 @@ import Modal from 'react-modal';
 import './NewUser.css';
 
 
-export default class Main extends React.Component {
-  constructor(props) {
-    super(props);
+// export default class Main extends React.Component {
+//   constructor(props) {
+//     super(props);
 
-    this.state = {
-      modalIsOpen: false,
-    };
+//     this.state = {
+//       modalIsOpen: false,
+//     };
 
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
+//     this.openModal = this.openModal.bind(this);
+//     this.afterOpenModal = this.afterOpenModal.bind(this);
+//     this.closeModal = this.closeModal.bind(this);
+//   }
 
-  openModal() {
-    this.setState({ modalIsOpen: true });
-  }
+//   openModal() {
+//     this.setState({ modalIsOpen: true });
+//   }
 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
-  }
+//   afterOpenModal() {
+//     // references are now sync'd and can be accessed.
+//     this.subtitle.style.color = '#f00';
+//   }
 
-  closeModal() {
-    this.setState({ modalIsOpen: false });
-  }
+//   closeModal() {
+//     this.setState({ modalIsOpen: false });
+//   }
 
   // ok change this to render
   // and then add a modal that pops up to tell the user that their request to submit a new user will be reviewed

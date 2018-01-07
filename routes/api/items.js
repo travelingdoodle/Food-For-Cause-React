@@ -36,7 +36,7 @@ router.get('/items', (req, res) => {
   });
 });
 
-// dont know that we need this. 
+// dont know that we need this.
 router.put('/:items', auth.required, (req, res, next) => {
   Item.findById(req.payload.id).then((user) => {
     if (req.item.name.toString() === req.payload.name.toString()) {
