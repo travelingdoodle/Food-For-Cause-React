@@ -10,10 +10,10 @@ class Login extends Component {
   };
 
   loginUser = (email, password) => {
-    let user = {
-      email: email,
-      password: password,
-    }
+    // let user = {
+    //   email: email,
+    //   password: password,
+    // }
     Request.Auth.login(email, password)
       .then(function(jwt){
         console.log(jwt);

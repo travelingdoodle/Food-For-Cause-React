@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Modal from 'react-modal';
+import Request from '../../agent';
 import './ItemsAdd.css';
 
 const customStyles = {
@@ -35,9 +36,6 @@ export default class Main extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
   openModal() {
@@ -52,16 +50,38 @@ export default class Main extends React.Component {
   closeModal() {
     this.setState({ modalIsOpen: false });
   }
-
-
-  handleInputChange(event) {
-    this.setState({ value: event.target.value });
+  state = {
+    name: "",
+    category: "",
+    quantity: "",
+    expiration: "",
   }
 
-  handleFormSubmit(event) {
-    this.setState({ value: event.target.value });
-    event.preventDefault();
+
+  postItem = (name, category, quantity, expiration) => {
+    let item = {
+      name: name,
+      category: category,
+      quantity: quantity,
+      expiration: expiration,
+    }
+    Request.Items.donate(name, category, quantity, expiration)
+    .catch(err => console.log(err));
   }
+
+    handleInputChange = event => {
+      const name = event.target.name;
+      const value = event.target.value;
+      this.setState({
+        [name]: value
+      });
+    };
+
+    handleFormSubmit = event => {
+      event.preventDefault();
+      
+      this.postItem(this.state.name, this.state.category, this.quantity, this.state.expiration);
+    }
 
   render(props) {
     return (
@@ -72,7 +92,7 @@ export default class Main extends React.Component {
               <h3 className="section-heading">Donations</h3>
               <hr />
               <br />
-              <form action="/api/items" method="POST" role="form" />
+              <form />
               <div className="form-group">
                 <label htmlFor="">Name</label>
                 <input

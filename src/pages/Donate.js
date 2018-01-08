@@ -37,7 +37,7 @@ class Donate extends Component {
     handleFormSubmit = event => {
       event.preventDefault();
       
-      this.postItem(this.state.name, this.state.category, this.state.expiration);
+      this.postItem(this.state.name, this.state.category, this.quantity, this.state.expiration);
     }
 
     render() {

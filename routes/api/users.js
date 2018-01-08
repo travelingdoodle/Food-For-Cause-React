@@ -77,7 +77,7 @@ router.post('/users/login', (req, res, next) => {
     return res.status(422).json({ errors: { password: "can't be blank" } });
   }
   // , successReturnToOrRedirect: '../donate', failureRedirect: '../login'
-  passport.authenticate('local', { session: true }, (err, user, info) => {
+  passport.authenticate('local', { session: false }, (err, user, info) => {
     // if (err) { return next(err); }
     if (err) {
       return res.status(200).json({ errors: { other: err, user1: user, info1: info } });
@@ -98,6 +98,7 @@ router.post('/users/login', (req, res, next) => {
 router.get('/users', (req, res, next) => {
   User.find({}, (err, users) => {
     res.json(users);
+    req.logOut();
   });
 });
 

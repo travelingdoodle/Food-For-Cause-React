@@ -29,9 +29,8 @@ import './NewUser.css';
 //     this.setState({ modalIsOpen: false });
 //   }
 
-  // ok change this to render
-  // and then add a modal that pops up to tell the user that their request to submit a new user will be reviewed
-  // then redirect after confirmation
+// and then add a modal to tell the user that their request to submit a new user will be reviewed
+// then redirect after confirmation
 
 const Register = props => (
   <div className="container register ">
@@ -97,7 +96,7 @@ const Register = props => (
         required
       />
       <br />
-
+      {/* disabled because I don't want to deal with it */}
       {/* <div className="row">
         <div className="col-lg-12 text-left">
           <h5 className="role">Please Choose Your Role</h5>

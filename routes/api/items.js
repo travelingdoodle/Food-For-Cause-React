@@ -68,7 +68,7 @@ router.post('/items', (req, res, next) => {
 
   item.save().then(() => {
     return res.json({ item: item.toJSONfor() });
-    res.send('items inserted');
+    console.log('items inserted');
   }).catch(next);
 });
 
