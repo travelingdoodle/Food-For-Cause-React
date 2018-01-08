@@ -1,14 +1,16 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { ReactTable, ReactTableDefaults } from 'react-table';
-
-import 'react-table/react-table.css';
 import './ItemsAvailable.css';
 
+// Import React Table
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
+
+import { ReactTableDefaults } from 'react-table';
 
 Object.assign(ReactTableDefaults, {
-  minRows: 15,
-  pageSizeOptions: [15, 20, 25, 50, 100],
+  minRows: 10,
+  pageSizeOptions: [10, 25, 50, 75, 100],
 });
 
 const customStyles = {
@@ -45,6 +47,10 @@ export default class Main extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
+
   openModal() {
     this.setState({ modalIsOpen: true });
   }
@@ -55,12 +61,8 @@ export default class Main extends React.Component {
   }
 
   closeModal() {
-    this.setState({ modalIsOpen: false });
+    this.setState({modalIsOpen: false});
   }
-
-  componentWillMount() {
-    Modal.setAppElement('body');
- }
 
   render() {
     const { data } = this.state;
@@ -74,7 +76,8 @@ export default class Main extends React.Component {
                 color: 'maroon',
                 fontWeight: '600',
               }}
-            >Notice:</h2>
+              >Notice:
+              </h2>
               <p style={{ fontWeight: '600' }}>As items are parishable, please review the expiration date and plan accordingly. Reserved items must be picked up within 24 hours, otherwise, they will be released. Thank you for your understanding.</p>
               <hr className="divider" />
             </div>
@@ -121,7 +124,7 @@ export default class Main extends React.Component {
             }
               defaultPageSize={10}
               className="-striped -highlight"
-          />
+            />
           </div>
           <div className="col-lg-8 offset-lg-2">
             <hr className="divider" />
@@ -134,7 +137,7 @@ export default class Main extends React.Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <h2 className="modal-heading" ref={subtitle => this.subtitle = subtitle}>Item Reserved!</h2>
+          <h2 className="modal-heading" ref={ subtitle => this.subtitle = subtitle }>Item Reserved!</h2>
           <button className="btn btn-default close-modal" onClick={this.closeModal}>close</button>
           <form>
             <p className="modal-inner">Please pickup your item before the expiration date. Any item that has not been picked up within 24 hours will be released.</p>

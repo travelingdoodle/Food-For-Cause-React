@@ -59,12 +59,12 @@ export default class Main extends React.Component {
 
 
   postItem = (name, category, quantity, expiration) => {
-    let item = {
-      name: name,
-      category: category,
-      quantity: quantity,
-      expiration: expiration,
-    }
+    // let item = {
+    //   name: name,
+    //   category: category,
+    //   quantity: quantity,
+    //   expiration: expiration,
+    // }
     Request.Items.donate(name, category, quantity, expiration)
     .catch(err => console.log(err));
   }
