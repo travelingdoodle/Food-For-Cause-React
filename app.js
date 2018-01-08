@@ -43,6 +43,7 @@ if (isProduction) {
 
 require('./models/User');
 require('./models/Item');
+require('./config/passport');
 
 app.use(require('./routes'));
 

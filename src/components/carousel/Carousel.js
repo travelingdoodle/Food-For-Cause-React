@@ -125,8 +125,7 @@ export default class Carousel extends React.Component {
             <h2 className="about-heading ">About Food For Cause</h2>
             <hr style={{ width:'36%', float:'left', clear:'both' }} />
             <p>Food For Cause provides a platform to connect local community outreach programs, like food banks and kitchens,
-              with companies that have food to donate. This is our final project at the University of Kansas Fullstack
-              coding bootcamp.
+              with companies that have food to donate.
             </p>
             <br />
             <h4 style={{ fontWeight: '600', textTransform: 'uppercase' }}>Why are Donations so Important?</h4>
